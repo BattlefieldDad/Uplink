@@ -1878,17 +1878,45 @@
                               </block>
                             </value>
                             <value name="VALUE-1">
-                              <block type="GetVariable">
+                              <block type="RoundToInteger">
                                 <value name="VALUE-0">
-                                  <block type="variableReferenceBlock">
-                                    <mutation isObjectVar="true"></mutation>
-                                    <field name="OBJECTTYPE">TeamId</field>
-                                    <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
-                                    <value name="OBJECT">
-                                      <block type="GetTeamId">
+                                  <block type="Multiply">
+                                    <value name="VALUE-0">
+                                      <block type="Divide">
                                         <value name="VALUE-0">
-                                          <block type="EventPlayer"></block>
+                                          <block type="GetVariable">
+                                            <value name="VALUE-0">
+                                              <block type="variableReferenceBlock">
+                                                <mutation isObjectVar="true"></mutation>
+                                                <field name="OBJECTTYPE">TeamId</field>
+                                                <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
+                                                <value name="OBJECT">
+                                                  <block type="GetTeamId">
+                                                    <value name="VALUE-0">
+                                                      <block type="EventPlayer"></block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
                                         </value>
+                                        <value name="VALUE-1">
+                                          <block type="GetVariable">
+                                            <value name="VALUE-0">
+                                              <block type="variableReferenceBlock">
+                                                <mutation isObjectVar="false"></mutation>
+                                                <field name="OBJECTTYPE">Global</field>
+                                                <field name="VAR" id="HuK_7P$!0RTEn[([hA}I" variabletype="Global">connectionPhaseTime</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="VALUE-1">
+                                      <block type="Number">
+                                        <field name="NUM">100</field>
                                       </block>
                                     </value>
                                   </block>
@@ -2116,17 +2144,45 @@
                                   </block>
                                 </value>
                                 <value name="VALUE-1">
-                                  <block type="GetVariable">
+                                  <block type="RoundToInteger">
                                     <value name="VALUE-0">
-                                      <block type="variableReferenceBlock">
-                                        <mutation isObjectVar="true"></mutation>
-                                        <field name="OBJECTTYPE">TeamId</field>
-                                        <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
-                                        <value name="OBJECT">
-                                          <block type="GetTeamId">
+                                      <block type="Multiply">
+                                        <value name="VALUE-0">
+                                          <block type="Divide">
                                             <value name="VALUE-0">
-                                              <block type="EventPlayer"></block>
+                                              <block type="GetVariable">
+                                                <value name="VALUE-0">
+                                                  <block type="variableReferenceBlock">
+                                                    <mutation isObjectVar="true"></mutation>
+                                                    <field name="OBJECTTYPE">TeamId</field>
+                                                    <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
+                                                    <value name="OBJECT">
+                                                      <block type="GetTeamId">
+                                                        <value name="VALUE-0">
+                                                          <block type="EventPlayer"></block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
                                             </value>
+                                            <value name="VALUE-1">
+                                              <block type="GetVariable">
+                                                <value name="VALUE-0">
+                                                  <block type="variableReferenceBlock">
+                                                    <mutation isObjectVar="false"></mutation>
+                                                    <field name="OBJECTTYPE">Global</field>
+                                                    <field name="VAR" id="cz0eNcSz`p5m}T9HF[#Z" variabletype="Global">transmissionPhaseTime</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="VALUE-1">
+                                          <block type="Number">
+                                            <field name="NUM">100</field>
                                           </block>
                                         </value>
                                       </block>
