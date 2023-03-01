@@ -2,6 +2,8 @@
   <variables>
     <variable type="TeamId" id="i[st-%KxM(646CkC@~_.">uplinkPhase</variable>
     <variable type="TeamId" id="px=]ig4~L!jVVjNxGaOl">uplinkProgress</variable>
+    <variable type="Player" id="jfos4_ftta]67CSI3?`2">holdingUplink</variable>
+    <variable type="Player" id="vCsMmxh)qXOygcITxX2J">interactToDropTimer</variable>
     <variable type="Global" id="HuK_7P$!0RTEn[([hA}I">connectionPhaseTime</variable>
     <variable type="Global" id="cz0eNcSz`p5m}T9HF[#Z">transmissionPhaseTime</variable>
     <variable type="Global" id="`Q8o~fV9^Y=wtf3U8u_N">uplinksRequiredToWin</variable>
@@ -15,8 +17,6 @@
     <variable type="Global" id="7d%E)(xTZ.%k/SQmy~ho">currentUplinkLocation</variable>
     <variable type="Global" id="/?1zy*a9G1]ra,X1RIEC">uplinkInactiveTimeAllowed</variable>
     <variable type="Global" id="{@Zkwo(.)2e-Z5RDy=yN">uplinkInactiveRespawnCounter</variable>
-    <variable type="Player" id="jfos4_ftta]67CSI3?`2">holdingUplink</variable>
-    <variable type="Player" id="vCsMmxh)qXOygcITxX2J">interactToDropTimer</variable>
   </variables>
   <block type="subroutineBlock" deletable="false" x="1737" y="-1852">
     <field name="SUBROUTINE_NAME">startGameMode</field>
@@ -245,7 +245,7 @@
       </block>
     </statement>
   </block>
-  <block type="modBlock" deletable="false" x="-568" y="-552">
+  <block type="modBlock" deletable="false" x="-1075" y="-785">
     <statement name="RULES">
       <block type="ruleBlock">
         <mutation isOnGoingEvent="true"></mutation>
@@ -752,7 +752,7 @@
                                                     <next>
                                                       <block type="ruleBlock">
                                                         <mutation isOnGoingEvent="true"></mutation>
-                                                        <field name="NAME">allowPlayerToDropUplink</field>
+                                                        <field name="NAME">startDropUplinkCounter</field>
                                                         <field name="EVENTTYPE">Ongoing</field>
                                                         <field name="OBJECTTYPE">Player</field>
                                                         <statement name="CONDITIONS">
@@ -786,6 +786,33 @@
                                                                     </value>
                                                                   </block>
                                                                 </value>
+                                                                <next>
+                                                                  <block type="conditionBlock">
+                                                                    <value name="CONDITION">
+                                                                      <block type="Equals">
+                                                                        <value name="VALUE-0">
+                                                                          <block type="GetVariable">
+                                                                            <value name="VALUE-0">
+                                                                              <block type="variableReferenceBlock">
+                                                                                <mutation isObjectVar="true"></mutation>
+                                                                                <field name="OBJECTTYPE">Player</field>
+                                                                                <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
+                                                                                <value name="OBJECT">
+                                                                                  <block type="EventPlayer"></block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="VALUE-1">
+                                                                          <block type="Number">
+                                                                            <field name="NUM">0</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
                                                               </block>
                                                             </next>
                                                           </block>
@@ -795,6 +822,81 @@
                                                             <field name="SUBROUTINE_NAME">trackPlayerInteractToDropUplinkTime</field>
                                                           </block>
                                                         </statement>
+                                                        <next>
+                                                          <block type="ruleBlock">
+                                                            <mutation isOnGoingEvent="true"></mutation>
+                                                            <field name="NAME">pleyerDroppedUplink</field>
+                                                            <field name="EVENTTYPE">Ongoing</field>
+                                                            <field name="OBJECTTYPE">Player</field>
+                                                            <statement name="CONDITIONS">
+                                                              <block type="conditionBlock">
+                                                                <value name="CONDITION">
+                                                                  <block type="GetVariable">
+                                                                    <value name="VALUE-0">
+                                                                      <block type="variableReferenceBlock">
+                                                                        <mutation isObjectVar="true"></mutation>
+                                                                        <field name="OBJECTTYPE">Player</field>
+                                                                        <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
+                                                                        <value name="OBJECT">
+                                                                          <block type="EventPlayer"></block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="conditionBlock">
+                                                                    <value name="CONDITION">
+                                                                      <block type="GetSoldierState">
+                                                                        <value name="VALUE-0">
+                                                                          <block type="EventPlayer"></block>
+                                                                        </value>
+                                                                        <value name="VALUE-1">
+                                                                          <block type="SoldierStateBoolItem">
+                                                                            <field name="VALUE-0">SoldierStateBool</field>
+                                                                            <field name="VALUE-1">IsInteracting</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="conditionBlock">
+                                                                        <value name="CONDITION">
+                                                                          <block type="GreaterThan">
+                                                                            <value name="VALUE-0">
+                                                                              <block type="GetVariable">
+                                                                                <value name="VALUE-0">
+                                                                                  <block type="variableReferenceBlock">
+                                                                                    <mutation isObjectVar="true"></mutation>
+                                                                                    <field name="OBJECTTYPE">Player</field>
+                                                                                    <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
+                                                                                    <value name="OBJECT">
+                                                                                      <block type="EventPlayer"></block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="VALUE-1">
+                                                                              <block type="Number">
+                                                                                <field name="NUM">0</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                            <statement name="ACTIONS">
+                                                              <block type="subroutineInstanceBlock">
+                                                                <field name="SUBROUTINE_NAME">playerDroppedUplink</field>
+                                                              </block>
+                                                            </statement>
+                                                          </block>
+                                                        </next>
                                                       </block>
                                                     </next>
                                                   </block>
@@ -819,6 +921,22 @@
             </next>
           </block>
         </next>
+      </block>
+    </statement>
+  </block>
+  <block type="subroutineBlock" deletable="false" x="1720" y="-523">
+    <field name="SUBROUTINE_NAME">initialiseUplinkIcon</field>
+    <statement name="ACTIONS">
+      <block type="subroutineInstanceBlock">
+        <mutation>
+          <parameter types="Boolean">enabled</parameter>
+        </mutation>
+        <field name="SUBROUTINE_NAME">setUplinkIconVisibility</field>
+        <value name="PARAM-0">
+          <block type="Boolean">
+            <field name="BOOL">FALSE</field>
+          </block>
+        </value>
       </block>
     </statement>
   </block>
@@ -1078,23 +1196,7 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="1732" y="-429">
-    <field name="SUBROUTINE_NAME">initialiseUplinkIcon</field>
-    <statement name="ACTIONS">
-      <block type="subroutineInstanceBlock">
-        <mutation>
-          <parameter types="Boolean">enabled</parameter>
-        </mutation>
-        <field name="SUBROUTINE_NAME">setUplinkIconVisibility</field>
-        <value name="PARAM-0">
-          <block type="Boolean">
-            <field name="BOOL">FALSE</field>
-          </block>
-        </value>
-      </block>
-    </statement>
-  </block>
-  <block type="subroutineBlock" deletable="false" x="1724" y="-147">
+  <block type="subroutineBlock" deletable="false" x="1719" y="-281">
     <mutation>
       <parameter types="Boolean">holdingUplink</parameter>
     </mutation>
@@ -1116,6 +1218,25 @@
             <field name="ARGUMENT_INDEX">0</field>
           </block>
         </value>
+        <next>
+          <block type="SetVariable">
+            <value name="VALUE-0">
+              <block type="variableReferenceBlock">
+                <mutation isObjectVar="true"></mutation>
+                <field name="OBJECTTYPE">Player</field>
+                <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
+                <value name="OBJECT">
+                  <block type="EventPlayer"></block>
+                </value>
+              </block>
+            </value>
+            <value name="VALUE-1">
+              <block type="Number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
@@ -1402,7 +1523,7 @@
       </block>
     </statement>
   </block>
-  <block type="Equals" x="124" y="1774">
+  <block type="Equals" x="208" y="1853">
     <value name="VALUE-0">
       <block type="CountOf">
         <value name="VALUE-0">
@@ -2318,202 +2439,6 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="-2129" y="2893">
-    <field name="SUBROUTINE_NAME">trackPlayerInteractToDropUplinkTime</field>
-    <statement name="ACTIONS">
-      <block type="If">
-        <mutation else="1"></mutation>
-        <value name="VALUE-0">
-          <block type="And">
-            <value name="VALUE-0">
-              <block type="GetVariable">
-                <value name="VALUE-0">
-                  <block type="variableReferenceBlock">
-                    <mutation isObjectVar="true"></mutation>
-                    <field name="OBJECTTYPE">Player</field>
-                    <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
-                    <value name="OBJECT">
-                      <block type="EventPlayer"></block>
-                    </value>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <value name="VALUE-1">
-              <block type="GreaterThan">
-                <value name="VALUE-0">
-                  <block type="GetVariable">
-                    <value name="VALUE-0">
-                      <block type="variableReferenceBlock">
-                        <mutation isObjectVar="true"></mutation>
-                        <field name="OBJECTTYPE">Player</field>
-                        <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
-                        <value name="OBJECT">
-                          <block type="EventPlayer"></block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <value name="VALUE-1">
-                  <block type="Number">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-          </block>
-        </value>
-        <statement name="DO">
-          <block type="ShowHighlightedGameModeMessage">
-            <value name="VALUE-0">
-              <block type="Message">
-                <value name="VALUE-0">
-                  <block type="Text">
-                    <field name="TEXT">TRIGGERED</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <value name="VALUE-1">
-              <block type="EventPlayer"></block>
-            </value>
-            <next>
-              <block type="subroutineInstanceBlock">
-                <field name="SUBROUTINE_NAME">playerDroppedUplink</field>
-              </block>
-            </next>
-          </block>
-        </statement>
-        <statement name="ELSE">
-          <block type="SetVariable">
-            <value name="VALUE-0">
-              <block type="variableReferenceBlock">
-                <mutation isObjectVar="true"></mutation>
-                <field name="OBJECTTYPE">Player</field>
-                <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
-                <value name="OBJECT">
-                  <block type="EventPlayer"></block>
-                </value>
-              </block>
-            </value>
-            <value name="VALUE-1">
-              <block type="Number">
-                <field name="NUM">1</field>
-              </block>
-            </value>
-            <next>
-              <block type="While">
-                <value name="VALUE-0">
-                  <block type="And">
-                    <value name="VALUE-0">
-                      <block type="GetVariable">
-                        <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="true"></mutation>
-                            <field name="OBJECTTYPE">Player</field>
-                            <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
-                            <value name="OBJECT">
-                              <block type="EventPlayer"></block>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="VALUE-1">
-                      <block type="GreaterThan">
-                        <value name="VALUE-0">
-                          <block type="GetVariable">
-                            <value name="VALUE-0">
-                              <block type="variableReferenceBlock">
-                                <mutation isObjectVar="true"></mutation>
-                                <field name="OBJECTTYPE">Player</field>
-                                <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
-                                <value name="OBJECT">
-                                  <block type="EventPlayer"></block>
-                                </value>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <value name="VALUE-1">
-                          <block type="Number">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO">
-                  <block type="SetVariable">
-                    <value name="VALUE-0">
-                      <block type="variableReferenceBlock">
-                        <mutation isObjectVar="true"></mutation>
-                        <field name="OBJECTTYPE">Player</field>
-                        <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
-                        <value name="OBJECT">
-                          <block type="EventPlayer"></block>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="VALUE-1">
-                      <block type="Subtract">
-                        <value name="VALUE-0">
-                          <block type="GetVariable">
-                            <value name="VALUE-0">
-                              <block type="variableReferenceBlock">
-                                <mutation isObjectVar="true"></mutation>
-                                <field name="OBJECTTYPE">Player</field>
-                                <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
-                                <value name="OBJECT">
-                                  <block type="EventPlayer"></block>
-                                </value>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <value name="VALUE-1">
-                          <block type="Number">
-                            <field name="NUM">0.1</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="ShowHighlightedGameModeMessage">
-                        <value name="VALUE-0">
-                          <block type="Message">
-                            <value name="VALUE-0">
-                              <block type="Text">
-                                <field name="TEXT">TAP INTERACT AGAIN TO DROP UPLINK</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <value name="VALUE-1">
-                          <block type="EventPlayer"></block>
-                        </value>
-                        <next>
-                          <block type="Wait">
-                            <value name="VALUE-0">
-                              <block type="Number">
-                                <field name="NUM">0.1</field>
-                              </block>
-                            </value>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </statement>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </statement>
-  </block>
   <block type="subroutineBlock" deletable="false" x="1737" y="2854">
     <mutation>
       <parameter types="Boolean">enabled</parameter>
@@ -2555,6 +2480,154 @@
                 <field name="ARGUMENT_INDEX">0</field>
               </block>
             </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="subroutineBlock" deletable="false" x="-1097" y="3063">
+    <field name="SUBROUTINE_NAME">trackPlayerInteractToDropUplinkTime</field>
+    <statement name="ACTIONS">
+      <block type="SetVariable">
+        <value name="VALUE-0">
+          <block type="variableReferenceBlock">
+            <mutation isObjectVar="true"></mutation>
+            <field name="OBJECTTYPE">Player</field>
+            <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
+            <value name="OBJECT">
+              <block type="EventPlayer"></block>
+            </value>
+          </block>
+        </value>
+        <value name="VALUE-1">
+          <block type="Number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <next>
+          <block type="While">
+            <value name="VALUE-0">
+              <block type="And">
+                <value name="VALUE-0">
+                  <block type="GetVariable">
+                    <value name="VALUE-0">
+                      <block type="variableReferenceBlock">
+                        <mutation isObjectVar="true"></mutation>
+                        <field name="OBJECTTYPE">Player</field>
+                        <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
+                        <value name="OBJECT">
+                          <block type="EventPlayer"></block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="VALUE-1">
+                  <block type="GreaterThan">
+                    <value name="VALUE-0">
+                      <block type="GetVariable">
+                        <value name="VALUE-0">
+                          <block type="variableReferenceBlock">
+                            <mutation isObjectVar="true"></mutation>
+                            <field name="OBJECTTYPE">Player</field>
+                            <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
+                            <value name="OBJECT">
+                              <block type="EventPlayer"></block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="VALUE-1">
+                      <block type="Number">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="SetVariable">
+                <value name="VALUE-0">
+                  <block type="variableReferenceBlock">
+                    <mutation isObjectVar="true"></mutation>
+                    <field name="OBJECTTYPE">Player</field>
+                    <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
+                    <value name="OBJECT">
+                      <block type="EventPlayer"></block>
+                    </value>
+                  </block>
+                </value>
+                <value name="VALUE-1">
+                  <block type="Subtract">
+                    <value name="VALUE-0">
+                      <block type="GetVariable">
+                        <value name="VALUE-0">
+                          <block type="variableReferenceBlock">
+                            <mutation isObjectVar="true"></mutation>
+                            <field name="OBJECTTYPE">Player</field>
+                            <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
+                            <value name="OBJECT">
+                              <block type="EventPlayer"></block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="VALUE-1">
+                      <block type="Number">
+                        <field name="NUM">0.1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="ShowHighlightedGameModeMessage">
+                    <value name="VALUE-0">
+                      <block type="Message">
+                        <value name="VALUE-0">
+                          <block type="Text">
+                            <field name="TEXT">TAP INTERACT AGAIN TO DROP UPLINK</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="VALUE-1">
+                      <block type="EventPlayer"></block>
+                    </value>
+                    <next>
+                      <block type="Wait">
+                        <value name="VALUE-0">
+                          <block type="Number">
+                            <field name="NUM">0.1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="SetVariable">
+                <value name="VALUE-0">
+                  <block type="variableReferenceBlock">
+                    <mutation isObjectVar="true"></mutation>
+                    <field name="OBJECTTYPE">Player</field>
+                    <field name="VAR" id="vCsMmxh)qXOygcITxX2J" variabletype="Player">interactToDropTimer</field>
+                    <value name="OBJECT">
+                      <block type="EventPlayer"></block>
+                    </value>
+                  </block>
+                </value>
+                <value name="VALUE-1">
+                  <block type="Number">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </next>
           </block>
         </next>
       </block>
