@@ -16,6 +16,7 @@
     <variable type="Global" id="7d%E)(xTZ.%k/SQmy~ho">currentUplinkLocation</variable>
     <variable type="Global" id="/?1zy*a9G1]ra,X1RIEC">uplinkInactiveTimeAllowed</variable>
     <variable type="Global" id="{@Zkwo(.)2e-Z5RDy=yN">uplinkInactiveRespawnCounter</variable>
+    <variable type="Global" id="L1b5(f8Q;UuXSTWbVP9(">uplinkHeld</variable>
   </variables>
   <block type="subroutineBlock" deletable="false" x="1737" y="-1852">
     <field name="SUBROUTINE_NAME">startGameMode</field>
@@ -65,14 +66,34 @@
                           <block type="variableReferenceBlock">
                             <mutation isObjectVar="false"></mutation>
                             <field name="OBJECTTYPE">Global</field>
-                            <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
+                            <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
                           </block>
                         </value>
                         <value name="VALUE-1">
-                          <block type="Text">
-                            <field name="TEXT">INACTIVE</field>
+                          <block type="GetTeamId">
+                            <value name="VALUE-0">
+                              <block type="Number">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
                           </block>
                         </value>
+                        <next>
+                          <block type="SetVariable">
+                            <value name="VALUE-0">
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="false"></mutation>
+                                <field name="OBJECTTYPE">Global</field>
+                                <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
+                              </block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="Text">
+                                <field name="TEXT">INACTIVE</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
                       </block>
                     </next>
                   </block>
@@ -170,7 +191,7 @@
                               <block type="variableReferenceBlock">
                                 <mutation isObjectVar="false"></mutation>
                                 <field name="OBJECTTYPE">Global</field>
-                                <field name="VAR" id="9Q]{dH0]g7!;.c]wcyE2" variabletype="Global">uplinkRespawnTime</field>
+                                <field name="VAR" id="/?1zy*a9G1]ra,X1RIEC" variabletype="Global">uplinkInactiveTimeAllowed</field>
                               </block>
                             </value>
                             <value name="VALUE-1">
@@ -598,9 +619,10 @@
                 </statement>
                 <next>
                   <block type="ruleBlock">
-                    <mutation isOnGoingEvent="false"></mutation>
+                    <mutation isOnGoingEvent="true"></mutation>
                     <field name="NAME">initialisePlayerWhenJoiningGame</field>
-                    <field name="EVENTTYPE">OnPlayerJoinGame</field>
+                    <field name="EVENTTYPE">Ongoing</field>
+                    <field name="OBJECTTYPE">Player</field>
                     <statement name="ACTIONS">
                       <block type="subroutineInstanceBlock">
                         <mutation>
@@ -814,33 +836,19 @@
                                                 <value name="CONDITION">
                                                   <block type="Equals">
                                                     <value name="VALUE-0">
-                                                      <block type="CountOf">
+                                                      <block type="GetVariable">
                                                         <value name="VALUE-0">
-                                                          <block type="FilteredArray">
-                                                            <value name="VALUE-0">
-                                                              <block type="AllPlayers"></block>
-                                                            </value>
-                                                            <value name="VALUE-1">
-                                                              <block type="GetVariable">
-                                                                <value name="VALUE-0">
-                                                                  <block type="variableReferenceBlock">
-                                                                    <mutation isObjectVar="true"></mutation>
-                                                                    <field name="OBJECTTYPE">Player</field>
-                                                                    <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
-                                                                    <value name="OBJECT">
-                                                                      <block type="CurrentArrayElement"></block>
-                                                                    </value>
-                                                                  </block>
-                                                                </value>
-                                                              </block>
-                                                            </value>
+                                                          <block type="variableReferenceBlock">
+                                                            <mutation isObjectVar="false"></mutation>
+                                                            <field name="OBJECTTYPE">Global</field>
+                                                            <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
                                                           </block>
                                                         </value>
                                                       </block>
                                                     </value>
                                                     <value name="VALUE-1">
-                                                      <block type="Number">
-                                                        <field name="NUM">0</field>
+                                                      <block type="Text">
+                                                        <field name="TEXT">ACTIVE</field>
                                                       </block>
                                                     </value>
                                                   </block>
@@ -855,14 +863,18 @@
                                                               <block type="variableReferenceBlock">
                                                                 <mutation isObjectVar="false"></mutation>
                                                                 <field name="OBJECTTYPE">Global</field>
-                                                                <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
+                                                                <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
                                                               </block>
                                                             </value>
                                                           </block>
                                                         </value>
                                                         <value name="VALUE-1">
-                                                          <block type="Text">
-                                                            <field name="TEXT">ACTIVE</field>
+                                                          <block type="GetTeamId">
+                                                            <value name="VALUE-0">
+                                                              <block type="Number">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
                                                           </block>
                                                         </value>
                                                       </block>
@@ -876,6 +888,112 @@
                                                 <field name="SUBROUTINE_NAME">startUplinkRespawnCountdownIfNotHeld</field>
                                               </block>
                                             </statement>
+                                            <next>
+                                              <block type="ruleBlock">
+                                                <mutation isOnGoingEvent="true"></mutation>
+                                                <field name="NAME">pickUpUplink</field>
+                                                <field name="EVENTTYPE">Ongoing</field>
+                                                <field name="OBJECTTYPE">Player</field>
+                                                <statement name="CONDITIONS">
+                                                  <block type="conditionBlock">
+                                                    <value name="CONDITION">
+                                                      <block type="Equals">
+                                                        <value name="VALUE-0">
+                                                          <block type="GetVariable">
+                                                            <value name="VALUE-0">
+                                                              <block type="variableReferenceBlock">
+                                                                <mutation isObjectVar="false"></mutation>
+                                                                <field name="OBJECTTYPE">Global</field>
+                                                                <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <value name="VALUE-1">
+                                                          <block type="GetTeamId">
+                                                            <value name="VALUE-0">
+                                                              <block type="Number">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="conditionBlock">
+                                                        <value name="CONDITION">
+                                                          <block type="Equals">
+                                                            <value name="VALUE-0">
+                                                              <block type="GetVariable">
+                                                                <value name="VALUE-0">
+                                                                  <block type="variableReferenceBlock">
+                                                                    <mutation isObjectVar="false"></mutation>
+                                                                    <field name="OBJECTTYPE">Global</field>
+                                                                    <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <value name="VALUE-1">
+                                                              <block type="Text">
+                                                                <field name="TEXT">ACTIVE</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="conditionBlock">
+                                                            <value name="CONDITION">
+                                                              <block type="LessThan">
+                                                                <value name="VALUE-0">
+                                                                  <block type="DistanceBetween">
+                                                                    <value name="VALUE-0">
+                                                                      <block type="GetVariable">
+                                                                        <value name="VALUE-0">
+                                                                          <block type="variableReferenceBlock">
+                                                                            <mutation isObjectVar="false"></mutation>
+                                                                            <field name="OBJECTTYPE">Global</field>
+                                                                            <field name="VAR" id="7d%E)(xTZ.%k/SQmy~ho" variabletype="Global">currentUplinkLocation</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="VALUE-1">
+                                                                      <block type="GetSoldierState">
+                                                                        <value name="VALUE-0">
+                                                                          <block type="EventPlayer"></block>
+                                                                        </value>
+                                                                        <value name="VALUE-1">
+                                                                          <block type="SoldierStateVectorItem">
+                                                                            <field name="VALUE-0">SoldierStateVector</field>
+                                                                            <field name="VALUE-1">GetPosition</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="VALUE-1">
+                                                                  <block type="Number">
+                                                                    <field name="NUM">1</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <statement name="ACTIONS">
+                                                  <block type="subroutineInstanceBlock">
+                                                    <field name="SUBROUTINE_NAME">playerPickedUpUplink</field>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
                                           </block>
                                         </next>
                                       </block>
@@ -980,39 +1098,52 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="1717" y="514">
+  <block type="subroutineBlock" deletable="false" x="1720" y="490">
     <field name="SUBROUTINE_NAME">initialiseUplinkDeviceForPlayer</field>
     <statement name="ACTIONS">
-      <block type="If">
-        <value name="VALUE-0">
-          <block type="GetSoldierState">
-            <value name="VALUE-0">
-              <block type="EventPlayer"></block>
-            </value>
-            <value name="VALUE-1">
-              <block type="SoldierStateBoolItem">
-                <field name="VALUE-0">SoldierStateBool</field>
-                <field name="VALUE-1">IsAlive</field>
-              </block>
-            </value>
+      <block type="subroutineInstanceBlock">
+        <mutation>
+          <parameter types="Boolean">holdingUplink</parameter>
+        </mutation>
+        <field name="SUBROUTINE_NAME">setUplinkDeviceStateForPlayer</field>
+        <value name="PARAM-0">
+          <block type="Boolean">
+            <field name="BOOL">FALSE</field>
           </block>
         </value>
-        <statement name="DO">
-          <block type="ShowEventGameModeMessage">
+        <next>
+          <block type="If">
             <value name="VALUE-0">
-              <block type="Message">
+              <block type="GetSoldierState">
                 <value name="VALUE-0">
-                  <block type="Text">
-                    <field name="TEXT">UPLINK DEVICE RESET. WAITING FOR NEW LOCATION</field>
+                  <block type="EventPlayer"></block>
+                </value>
+                <value name="VALUE-1">
+                  <block type="SoldierStateBoolItem">
+                    <field name="VALUE-0">SoldierStateBool</field>
+                    <field name="VALUE-1">IsAlive</field>
                   </block>
                 </value>
               </block>
             </value>
-            <value name="VALUE-1">
-              <block type="EventPlayer"></block>
-            </value>
+            <statement name="DO">
+              <block type="ShowEventGameModeMessage">
+                <value name="VALUE-0">
+                  <block type="Message">
+                    <value name="VALUE-0">
+                      <block type="Text">
+                        <field name="TEXT">UPLINK DEVICE RESET. WAITING FOR NEW LOCATION</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="VALUE-1">
+                  <block type="EventPlayer"></block>
+                </value>
+              </block>
+            </statement>
           </block>
-        </statement>
+        </next>
       </block>
     </statement>
   </block>
@@ -1052,7 +1183,7 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="1719" y="1290">
+  <block type="subroutineBlock" deletable="false" x="1718" y="1242">
     <field name="SUBROUTINE_NAME">initialiseUplinkDevice</field>
     <statement name="ACTIONS">
       <block type="SetVariable">
@@ -1205,6 +1336,38 @@
       </block>
     </statement>
   </block>
+  <block type="Equals" x="124" y="1774">
+    <value name="VALUE-0">
+      <block type="CountOf">
+        <value name="VALUE-0">
+          <block type="FilteredArray">
+            <value name="VALUE-0">
+              <block type="AllPlayers"></block>
+            </value>
+            <value name="VALUE-1">
+              <block type="GetVariable">
+                <value name="VALUE-0">
+                  <block type="variableReferenceBlock">
+                    <mutation isObjectVar="true"></mutation>
+                    <field name="OBJECTTYPE">Player</field>
+                    <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
+                    <value name="OBJECT">
+                      <block type="CurrentArrayElement"></block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+    <value name="VALUE-1">
+      <block type="Number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
   <block type="subroutineBlock" deletable="false" x="1717" y="1960">
     <field name="SUBROUTINE_NAME">chooseNewUplinkSpawnLocation</field>
     <statement name="ACTIONS">
@@ -1236,6 +1399,9 @@
   </block>
   <block type="Text" x="2329" y="1994">
     <field name="TEXT">Can add logic here to make sure neither team has a player too close to the selected location</field>
+  </block>
+  <block type="subroutineBlock" deletable="false" x="3388" y="1963">
+    <field name="SUBROUTINE_NAME">playerPickedUpUplink</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="1725" y="2256">
     <field name="SUBROUTINE_NAME">activateNewUplink</field>
@@ -1515,7 +1681,7 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="1745" y="4411">
+  <block type="subroutineBlock" deletable="false" x="1742" y="4392">
     <field name="SUBROUTINE_NAME">startUplinkRespawnCountdownIfNotHeld</field>
     <statement name="ACTIONS">
       <block type="SetVariable">
@@ -1564,33 +1730,23 @@
                 <value name="VALUE-1">
                   <block type="Equals">
                     <value name="VALUE-0">
-                      <block type="CountOf">
+                      <block type="GetVariable">
                         <value name="VALUE-0">
-                          <block type="FilteredArray">
-                            <value name="VALUE-0">
-                              <block type="AllPlayers"></block>
-                            </value>
-                            <value name="VALUE-1">
-                              <block type="GetVariable">
-                                <value name="VALUE-0">
-                                  <block type="variableReferenceBlock">
-                                    <mutation isObjectVar="true"></mutation>
-                                    <field name="OBJECTTYPE">Player</field>
-                                    <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
-                                    <value name="OBJECT">
-                                      <block type="CurrentArrayElement"></block>
-                                    </value>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
+                          <block type="variableReferenceBlock">
+                            <mutation isObjectVar="false"></mutation>
+                            <field name="OBJECTTYPE">Global</field>
+                            <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <value name="VALUE-1">
-                      <block type="Number">
-                        <field name="NUM">0</field>
+                      <block type="GetTeamId">
+                        <value name="VALUE-0">
+                          <block type="Number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
                       </block>
                     </value>
                   </block>
@@ -1633,41 +1789,65 @@
                   </block>
                 </statement>
                 <next>
-                  <block type="Wait">
+                  <block type="ShowHighlightedGameModeMessage">
                     <value name="VALUE-0">
-                      <block type="Number">
-                        <field name="NUM">1</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="SetVariable">
+                      <block type="Message">
                         <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="false"></mutation>
-                            <field name="OBJECTTYPE">Global</field>
-                            <field name="VAR" id="{@Zkwo(.)2e-Z5RDy=yN" variabletype="Global">uplinkInactiveRespawnCounter</field>
+                          <block type="Text">
+                            <field name="TEXT">COUNTING {}</field>
                           </block>
                         </value>
                         <value name="VALUE-1">
-                          <block type="Subtract">
+                          <block type="GetVariable">
                             <value name="VALUE-0">
-                              <block type="GetVariable">
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="false"></mutation>
+                                <field name="OBJECTTYPE">Global</field>
+                                <field name="VAR" id="{@Zkwo(.)2e-Z5RDy=yN" variabletype="Global">uplinkInactiveRespawnCounter</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="Wait">
+                        <value name="VALUE-0">
+                          <block type="Number">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="SetVariable">
+                            <value name="VALUE-0">
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="false"></mutation>
+                                <field name="OBJECTTYPE">Global</field>
+                                <field name="VAR" id="{@Zkwo(.)2e-Z5RDy=yN" variabletype="Global">uplinkInactiveRespawnCounter</field>
+                              </block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="Subtract">
                                 <value name="VALUE-0">
-                                  <block type="variableReferenceBlock">
-                                    <mutation isObjectVar="false"></mutation>
-                                    <field name="OBJECTTYPE">Global</field>
-                                    <field name="VAR" id="{@Zkwo(.)2e-Z5RDy=yN" variabletype="Global">uplinkInactiveRespawnCounter</field>
+                                  <block type="GetVariable">
+                                    <value name="VALUE-0">
+                                      <block type="variableReferenceBlock">
+                                        <mutation isObjectVar="false"></mutation>
+                                        <field name="OBJECTTYPE">Global</field>
+                                        <field name="VAR" id="{@Zkwo(.)2e-Z5RDy=yN" variabletype="Global">uplinkInactiveRespawnCounter</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="VALUE-1">
+                                  <block type="Number">
+                                    <field name="NUM">1</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
-                            <value name="VALUE-1">
-                              <block type="Number">
-                                <field name="NUM">1</field>
-                              </block>
-                            </value>
                           </block>
-                        </value>
+                        </next>
                       </block>
                     </next>
                   </block>
@@ -1679,33 +1859,23 @@
                 <value name="VALUE-0">
                   <block type="Equals">
                     <value name="VALUE-0">
-                      <block type="CountOf">
+                      <block type="GetVariable">
                         <value name="VALUE-0">
-                          <block type="FilteredArray">
-                            <value name="VALUE-0">
-                              <block type="AllPlayers"></block>
-                            </value>
-                            <value name="VALUE-1">
-                              <block type="GetVariable">
-                                <value name="VALUE-0">
-                                  <block type="variableReferenceBlock">
-                                    <mutation isObjectVar="true"></mutation>
-                                    <field name="OBJECTTYPE">Player</field>
-                                    <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
-                                    <value name="OBJECT">
-                                      <block type="CurrentArrayElement"></block>
-                                    </value>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
+                          <block type="variableReferenceBlock">
+                            <mutation isObjectVar="false"></mutation>
+                            <field name="OBJECTTYPE">Global</field>
+                            <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <value name="VALUE-1">
-                      <block type="Number">
-                        <field name="NUM">0</field>
+                      <block type="GetTeamId">
+                        <value name="VALUE-0">
+                          <block type="Number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
                       </block>
                     </value>
                   </block>
@@ -1732,5 +1902,69 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="Equals" x="2942" y="4438">
+    <value name="VALUE-0">
+      <block type="CountOf">
+        <value name="VALUE-0">
+          <block type="FilteredArray">
+            <value name="VALUE-0">
+              <block type="AllPlayers"></block>
+            </value>
+            <value name="VALUE-1">
+              <block type="GetVariable">
+                <value name="VALUE-0">
+                  <block type="variableReferenceBlock">
+                    <mutation isObjectVar="true"></mutation>
+                    <field name="OBJECTTYPE">Player</field>
+                    <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
+                    <value name="OBJECT">
+                      <block type="CurrentArrayElement"></block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+    <value name="VALUE-1">
+      <block type="Number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="Equals" x="2249" y="5229">
+    <value name="VALUE-0">
+      <block type="CountOf">
+        <value name="VALUE-0">
+          <block type="FilteredArray">
+            <value name="VALUE-0">
+              <block type="AllPlayers"></block>
+            </value>
+            <value name="VALUE-1">
+              <block type="GetVariable">
+                <value name="VALUE-0">
+                  <block type="variableReferenceBlock">
+                    <mutation isObjectVar="true"></mutation>
+                    <field name="OBJECTTYPE">Player</field>
+                    <field name="VAR" id="jfos4_ftta]67CSI3?`2" variabletype="Player">holdingUplink</field>
+                    <value name="OBJECT">
+                      <block type="CurrentArrayElement"></block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+    <value name="VALUE-1">
+      <block type="Number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
   </block>
 </xml>
