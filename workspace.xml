@@ -887,13 +887,7 @@
                                                                                     </value>
                                                                                     <statement name="DO">
                                                                                       <block type="subroutineInstanceBlock">
-                                                                                        <mutation>
-                                                                                          <parameter types="TeamId">teamID</parameter>
-                                                                                        </mutation>
                                                                                         <field name="SUBROUTINE_NAME">updateProgressMessageTextFromArray</field>
-                                                                                        <value name="PARAM-0">
-                                                                                          <block type="EventTeam"></block>
-                                                                                        </value>
                                                                                         <next>
                                                                                           <block type="Wait">
                                                                                             <value name="VALUE-0">
@@ -4063,9 +4057,6 @@
     <field name="TEXT">SEE IF THIS AUDIO PLAYS INSTEAD - MAYBE ISSUE WITH OBJECTIVE TAKEN VO</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="4278" y="5580">
-    <mutation>
-      <parameter types="TeamId">teamID</parameter>
-    </mutation>
     <field name="SUBROUTINE_NAME">updateProgressMessageTextFromArray</field>
     <statement name="ACTIONS">
       <block type="If">
@@ -4080,9 +4071,7 @@
                     <field name="OBJECTTYPE">TeamId</field>
                     <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
                     <value name="OBJECT">
-                      <block type="subroutineArgumentBlock">
-                        <field name="ARGUMENT_INDEX">0</field>
-                      </block>
+                      <block type="EventTeam"></block>
                     </value>
                   </block>
                 </value>
@@ -4103,9 +4092,7 @@
                 <field name="OBJECTTYPE">TeamId</field>
                 <field name="VAR" id=";zZ,.apgy{8obkXk{Kc7" variabletype="TeamId">uplinkProgressText</field>
                 <value name="OBJECT">
-                  <block type="subroutineArgumentBlock">
-                    <field name="ARGUMENT_INDEX">0</field>
-                  </block>
+                  <block type="EventTeam"></block>
                 </value>
               </block>
             </value>
@@ -4126,9 +4113,7 @@
                     <field name="OBJECTTYPE">TeamId</field>
                     <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
                     <value name="OBJECT">
-                      <block type="subroutineArgumentBlock">
-                        <field name="ARGUMENT_INDEX">0</field>
-                      </block>
+                      <block type="EventTeam"></block>
                     </value>
                   </block>
                 </value>
@@ -4169,11 +4154,7 @@
                                     <field name="OBJECTTYPE">TeamId</field>
                                     <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
                                     <value name="OBJECT">
-                                      <block type="GetTeamId">
-                                        <value name="VALUE-0">
-                                          <block type="EventPlayer"></block>
-                                        </value>
-                                      </block>
+                                      <block type="EventTeam"></block>
                                     </value>
                                   </block>
                                 </value>
@@ -4278,9 +4259,7 @@
                         <field name="OBJECTTYPE">TeamId</field>
                         <field name="VAR" id=";zZ,.apgy{8obkXk{Kc7" variabletype="TeamId">uplinkProgressText</field>
                         <value name="OBJECT">
-                          <block type="subroutineArgumentBlock">
-                            <field name="ARGUMENT_INDEX">0</field>
-                          </block>
+                          <block type="EventTeam"></block>
                         </value>
                       </block>
                     </value>
@@ -4329,9 +4308,7 @@
                     <field name="OBJECTTYPE">TeamId</field>
                     <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
                     <value name="OBJECT">
-                      <block type="subroutineArgumentBlock">
-                        <field name="ARGUMENT_INDEX">0</field>
-                      </block>
+                      <block type="EventTeam"></block>
                     </value>
                   </block>
                 </value>
@@ -4372,11 +4349,7 @@
                                     <field name="OBJECTTYPE">TeamId</field>
                                     <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
                                     <value name="OBJECT">
-                                      <block type="GetTeamId">
-                                        <value name="VALUE-0">
-                                          <block type="EventPlayer"></block>
-                                        </value>
-                                      </block>
+                                      <block type="EventTeam"></block>
                                     </value>
                                   </block>
                                 </value>
@@ -4490,9 +4463,7 @@
                         <field name="OBJECTTYPE">TeamId</field>
                         <field name="VAR" id=";zZ,.apgy{8obkXk{Kc7" variabletype="TeamId">uplinkProgressText</field>
                         <value name="OBJECT">
-                          <block type="subroutineArgumentBlock">
-                            <field name="ARGUMENT_INDEX">0</field>
-                          </block>
+                          <block type="EventTeam"></block>
                         </value>
                       </block>
                     </value>
@@ -4519,9 +4490,7 @@
                                     <field name="OBJECTTYPE">TeamId</field>
                                     <field name="VAR" id="qDN-Q7RJ,=SD.0fIn!uN" variabletype="TeamId">messageArrayIndexCalculation</field>
                                     <value name="OBJECT">
-                                      <block type="subroutineArgumentBlock">
-                                        <field name="ARGUMENT_INDEX">-1</field>
-                                      </block>
+                                      <block type="EventTeam"></block>
                                     </value>
                                   </block>
                                 </value>
@@ -4553,11 +4522,5 @@
         </statement>
       </block>
     </statement>
-  </block>
-  <block type="subroutineArgumentBlock" x="6196" y="6184">
-    <field name="ARGUMENT_INDEX">0</field>
-  </block>
-  <block type="subroutineArgumentBlock" x="6119" y="6545">
-    <field name="ARGUMENT_INDEX">0</field>
   </block>
 </xml>
