@@ -186,7 +186,7 @@
                             <mutation isOnGoingEvent="true"></mutation>
                             <field name="NAME">initialiseUplinkDeviceForTeam</field>
                             <field name="EVENTTYPE">Ongoing</field>
-                            <field name="OBJECTTYPE">Global</field>
+                            <field name="OBJECTTYPE">Team</field>
                             <statement name="ACTIONS">
                               <block type="subroutineInstanceBlock">
                                 <mutation>
@@ -2084,6 +2084,9 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="Text" x="-335" y="2366">
+    <field name="TEXT">rule 17</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="4280" y="2531">
     <field name="SUBROUTINE_NAME">startUplinkProgression</field>
