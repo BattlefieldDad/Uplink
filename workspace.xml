@@ -2195,8 +2195,21 @@
                 <value name="PARAM-0">
                   <block type="Message">
                     <value name="VALUE-0">
-                      <block type="Text">
-                        <field name="TEXT">CONNECTING PROGRESS {} %</field>
+                      <block type="GetVariable">
+                        <value name="VALUE-0">
+                          <block type="variableReferenceBlock">
+                            <mutation isObjectVar="true"></mutation>
+                            <field name="OBJECTTYPE">TeamId</field>
+                            <field name="VAR" id=";zZ,.apgy{8obkXk{Kc7" variabletype="TeamId">uplinkProgressText</field>
+                            <value name="OBJECT">
+                              <block type="GetTeamId">
+                                <value name="VALUE-0">
+                                  <block type="EventPlayer"></block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
                       </block>
                     </value>
                     <value name="VALUE-1">
@@ -2465,8 +2478,21 @@
                     <value name="PARAM-0">
                       <block type="Message">
                         <value name="VALUE-0">
-                          <block type="Text">
-                            <field name="TEXT">TRANSMITTING PROGRESS {} %</field>
+                          <block type="GetVariable">
+                            <value name="VALUE-0">
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="true"></mutation>
+                                <field name="OBJECTTYPE">TeamId</field>
+                                <field name="VAR" id=";zZ,.apgy{8obkXk{Kc7" variabletype="TeamId">uplinkProgressText</field>
+                                <value name="OBJECT">
+                                  <block type="GetTeamId">
+                                    <value name="VALUE-0">
+                                      <block type="EventPlayer"></block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
                           </block>
                         </value>
                         <value name="VALUE-1">
