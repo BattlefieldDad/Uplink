@@ -1490,6 +1490,9 @@
       </block>
     </statement>
   </block>
+  <block type="Text" x="-207" y="937">
+    <field name="TEXT">rule 11</field>
+  </block>
   <block type="subroutineBlock" deletable="false" x="1717" y="889">
     <field name="SUBROUTINE_NAME">playerMessageOnDeviceActivated</field>
     <statement name="ACTIONS">
@@ -1969,6 +1972,9 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="Text" x="62" y="2517">
+    <field name="TEXT">rule 16</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="4280" y="2531">
     <field name="SUBROUTINE_NAME">startUplinkProgression</field>
@@ -3456,18 +3462,41 @@
                             <value name="VALUE-0">
                               <block type="VoiceOversItem">
                                 <field name="VALUE-0">VoiceOvers</field>
-                                <field name="VALUE-1">ObjectiveTaken_Friendly</field>
+                                <field name="VALUE-1">ObjectiveLost</field>
                               </block>
                             </value>
                             <value name="VALUE-1">
-                              <block type="EventTeam"></block>
+                              <block type="GetTeamId">
+                                <value name="VALUE-0">
+                                  <block type="Number">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
                             </value>
                             <next>
-                              <block type="TriggerAudio">
+                              <block type="ShowEventGameModeMessage">
                                 <value name="VALUE-0">
-                                  <block type="VoiceOversItem">
-                                    <field name="VALUE-0">VoiceOvers</field>
-                                    <field name="VALUE-1">ObjectiveLost</field>
+                                  <block type="Message">
+                                    <value name="VALUE-0">
+                                      <block type="Text">
+                                        <field name="TEXT">ENEMY CONNECTION COMPLETED. THEY NEED {} MORE CONNECTIONS TO WIN,</field>
+                                      </block>
+                                    </value>
+                                    <value name="VALUE-1">
+                                      <block type="Subtract">
+                                        <value name="VALUE-0">
+                                          <block type="GetTargetScore"></block>
+                                        </value>
+                                        <value name="VALUE-1">
+                                          <block type="GetGamemodeScore">
+                                            <value name="VALUE-0">
+                                              <block type="EventTeam"></block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
                                   </block>
                                 </value>
                                 <value name="VALUE-1">
@@ -3479,42 +3508,6 @@
                                     </value>
                                   </block>
                                 </value>
-                                <next>
-                                  <block type="ShowEventGameModeMessage">
-                                    <value name="VALUE-0">
-                                      <block type="Message">
-                                        <value name="VALUE-0">
-                                          <block type="Text">
-                                            <field name="TEXT">ENEMY CONNECTION COMPLETED. THEY NEED {} MORE CONNECTIONS TO WIN,</field>
-                                          </block>
-                                        </value>
-                                        <value name="VALUE-1">
-                                          <block type="Subtract">
-                                            <value name="VALUE-0">
-                                              <block type="GetTargetScore"></block>
-                                            </value>
-                                            <value name="VALUE-1">
-                                              <block type="GetGamemodeScore">
-                                                <value name="VALUE-0">
-                                                  <block type="EventTeam"></block>
-                                                </value>
-                                              </block>
-                                            </value>
-                                          </block>
-                                        </value>
-                                      </block>
-                                    </value>
-                                    <value name="VALUE-1">
-                                      <block type="GetTeamId">
-                                        <value name="VALUE-0">
-                                          <block type="Number">
-                                            <field name="NUM">2</field>
-                                          </block>
-                                        </value>
-                                      </block>
-                                    </value>
-                                  </block>
-                                </next>
                               </block>
                             </next>
                           </block>
