@@ -4481,32 +4481,14 @@
                           </block>
                         </value>
                         <value name="VALUE-1">
-                          <block type="ValueInArray">
+                          <block type="GetVariable">
                             <value name="VALUE-0">
-                              <block type="GetVariable">
-                                <value name="VALUE-0">
-                                  <block type="variableReferenceBlock">
-                                    <mutation isObjectVar="true"></mutation>
-                                    <field name="OBJECTTYPE">TeamId</field>
-                                    <field name="VAR" id="qDN-Q7RJ,=SD.0fIn!uN" variabletype="TeamId">messageArrayIndexCalculation</field>
-                                    <value name="OBJECT">
-                                      <block type="EventTeam"></block>
-                                    </value>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
-                            <value name="VALUE-1">
-                              <block type="GetVariable">
-                                <value name="VALUE-0">
-                                  <block type="variableReferenceBlock">
-                                    <mutation isObjectVar="true"></mutation>
-                                    <field name="OBJECTTYPE">TeamId</field>
-                                    <field name="VAR" id="qDN-Q7RJ,=SD.0fIn!uN" variabletype="TeamId">messageArrayIndexCalculation</field>
-                                    <value name="OBJECT">
-                                      <block type="EventTeam"></block>
-                                    </value>
-                                  </block>
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="true"></mutation>
+                                <field name="OBJECTTYPE">TeamId</field>
+                                <field name="VAR" id="qDN-Q7RJ,=SD.0fIn!uN" variabletype="TeamId">messageArrayIndexCalculation</field>
+                                <value name="OBJECT">
+                                  <block type="EventTeam"></block>
                                 </value>
                               </block>
                             </value>
