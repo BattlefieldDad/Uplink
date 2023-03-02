@@ -2085,9 +2085,6 @@
       </block>
     </statement>
   </block>
-  <block type="Text" x="-335" y="2366">
-    <field name="TEXT">rule 17</field>
-  </block>
   <block type="subroutineBlock" deletable="false" x="4280" y="2531">
     <field name="SUBROUTINE_NAME">startUplinkProgression</field>
     <statement name="ACTIONS">
@@ -4293,14 +4290,9 @@
                           <block type="GetVariable">
                             <value name="VALUE-0">
                               <block type="variableReferenceBlock">
-                                <mutation isObjectVar="true"></mutation>
-                                <field name="OBJECTTYPE">TeamId</field>
-                                <field name="VAR" id="qDN-Q7RJ,=SD.0fIn!uN" variabletype="TeamId">messageArrayIndexCalculation</field>
-                                <value name="OBJECT">
-                                  <block type="subroutineArgumentBlock">
-                                    <field name="ARGUMENT_INDEX">0</field>
-                                  </block>
-                                </value>
+                                <mutation isObjectVar="false"></mutation>
+                                <field name="OBJECTTYPE">Global</field>
+                                <field name="VAR" id="fpp%3Q4#=Pr$o2GGg%}!" variabletype="Global">progressMessageTextArray</field>
                               </block>
                             </value>
                           </block>
@@ -4510,14 +4502,9 @@
                           <block type="GetVariable">
                             <value name="VALUE-0">
                               <block type="variableReferenceBlock">
-                                <mutation isObjectVar="true"></mutation>
-                                <field name="OBJECTTYPE">TeamId</field>
-                                <field name="VAR" id=";zZ,.apgy{8obkXk{Kc7" variabletype="TeamId">uplinkProgressText</field>
-                                <value name="OBJECT">
-                                  <block type="subroutineArgumentBlock">
-                                    <field name="ARGUMENT_INDEX">0</field>
-                                  </block>
-                                </value>
+                                <mutation isObjectVar="false"></mutation>
+                                <field name="OBJECTTYPE">Global</field>
+                                <field name="VAR" id="fpp%3Q4#=Pr$o2GGg%}!" variabletype="Global">progressMessageTextArray</field>
                               </block>
                             </value>
                           </block>
@@ -4566,5 +4553,11 @@
         </statement>
       </block>
     </statement>
+  </block>
+  <block type="subroutineArgumentBlock" x="6196" y="6184">
+    <field name="ARGUMENT_INDEX">0</field>
+  </block>
+  <block type="subroutineArgumentBlock" x="6119" y="6545">
+    <field name="ARGUMENT_INDEX">0</field>
   </block>
 </xml>
