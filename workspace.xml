@@ -486,25 +486,14 @@
                                                 <statement name="CONDITIONS">
                                                   <block type="conditionBlock">
                                                     <value name="CONDITION">
-                                                      <block type="Equals">
+                                                      <block type="GetSoldierState">
                                                         <value name="VALUE-0">
-                                                          <block type="GetVariable">
-                                                            <value name="VALUE-0">
-                                                              <block type="variableReferenceBlock">
-                                                                <mutation isObjectVar="false"></mutation>
-                                                                <field name="OBJECTTYPE">Global</field>
-                                                                <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
-                                                              </block>
-                                                            </value>
-                                                          </block>
+                                                          <block type="EventPlayer"></block>
                                                         </value>
                                                         <value name="VALUE-1">
-                                                          <block type="GetTeamId">
-                                                            <value name="VALUE-0">
-                                                              <block type="Number">
-                                                                <field name="NUM">0</field>
-                                                              </block>
-                                                            </value>
+                                                          <block type="SoldierStateBoolItem">
+                                                            <field name="VALUE-0">SoldierStateBool</field>
+                                                            <field name="VALUE-1">IsAlive</field>
                                                           </block>
                                                         </value>
                                                       </block>
@@ -519,14 +508,18 @@
                                                                   <block type="variableReferenceBlock">
                                                                     <mutation isObjectVar="false"></mutation>
                                                                     <field name="OBJECTTYPE">Global</field>
-                                                                    <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
+                                                                    <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
                                                                   </block>
                                                                 </value>
                                                               </block>
                                                             </value>
                                                             <value name="VALUE-1">
-                                                              <block type="Text">
-                                                                <field name="TEXT">ACTIVE</field>
+                                                              <block type="GetTeamId">
+                                                                <value name="VALUE-0">
+                                                                  <block type="Number">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
                                                               </block>
                                                             </value>
                                                           </block>
@@ -534,42 +527,66 @@
                                                         <next>
                                                           <block type="conditionBlock">
                                                             <value name="CONDITION">
-                                                              <block type="LessThan">
+                                                              <block type="Equals">
                                                                 <value name="VALUE-0">
-                                                                  <block type="DistanceBetween">
+                                                                  <block type="GetVariable">
                                                                     <value name="VALUE-0">
-                                                                      <block type="GetVariable">
-                                                                        <value name="VALUE-0">
-                                                                          <block type="variableReferenceBlock">
-                                                                            <mutation isObjectVar="false"></mutation>
-                                                                            <field name="OBJECTTYPE">Global</field>
-                                                                            <field name="VAR" id="7d%E)(xTZ.%k/SQmy~ho" variabletype="Global">currentUplinkLocation</field>
-                                                                          </block>
-                                                                        </value>
-                                                                      </block>
-                                                                    </value>
-                                                                    <value name="VALUE-1">
-                                                                      <block type="GetSoldierState">
-                                                                        <value name="VALUE-0">
-                                                                          <block type="EventPlayer"></block>
-                                                                        </value>
-                                                                        <value name="VALUE-1">
-                                                                          <block type="SoldierStateVectorItem">
-                                                                            <field name="VALUE-0">SoldierStateVector</field>
-                                                                            <field name="VALUE-1">GetPosition</field>
-                                                                          </block>
-                                                                        </value>
+                                                                      <block type="variableReferenceBlock">
+                                                                        <mutation isObjectVar="false"></mutation>
+                                                                        <field name="OBJECTTYPE">Global</field>
+                                                                        <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
                                                                       </block>
                                                                     </value>
                                                                   </block>
                                                                 </value>
                                                                 <value name="VALUE-1">
-                                                                  <block type="Number">
-                                                                    <field name="NUM">1</field>
+                                                                  <block type="Text">
+                                                                    <field name="TEXT">ACTIVE</field>
                                                                   </block>
                                                                 </value>
                                                               </block>
                                                             </value>
+                                                            <next>
+                                                              <block type="conditionBlock">
+                                                                <value name="CONDITION">
+                                                                  <block type="LessThan">
+                                                                    <value name="VALUE-0">
+                                                                      <block type="DistanceBetween">
+                                                                        <value name="VALUE-0">
+                                                                          <block type="GetVariable">
+                                                                            <value name="VALUE-0">
+                                                                              <block type="variableReferenceBlock">
+                                                                                <mutation isObjectVar="false"></mutation>
+                                                                                <field name="OBJECTTYPE">Global</field>
+                                                                                <field name="VAR" id="7d%E)(xTZ.%k/SQmy~ho" variabletype="Global">currentUplinkLocation</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="VALUE-1">
+                                                                          <block type="GetSoldierState">
+                                                                            <value name="VALUE-0">
+                                                                              <block type="EventPlayer"></block>
+                                                                            </value>
+                                                                            <value name="VALUE-1">
+                                                                              <block type="SoldierStateVectorItem">
+                                                                                <field name="VALUE-0">SoldierStateVector</field>
+                                                                                <field name="VALUE-1">GetPosition</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="VALUE-1">
+                                                                      <block type="Number">
+                                                                        <field name="NUM">1</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
                                                           </block>
                                                         </next>
                                                       </block>
@@ -3227,7 +3244,7 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="-1115" y="4781">
+  <block type="subroutineBlock" deletable="false" x="-1127" y="4596">
     <field name="SUBROUTINE_NAME">trackUplinkPositionWhileHeld</field>
     <statement name="ACTIONS">
       <block type="subroutineInstanceBlock">
@@ -3351,6 +3368,19 @@
                             <field name="VALUE-1">Triangle</field>
                           </block>
                         </value>
+                        <next>
+                          <block type="subroutineInstanceBlock">
+                            <mutation>
+                              <parameter types="String,Message">textToShow</parameter>
+                            </mutation>
+                            <field name="SUBROUTINE_NAME">setUplinkIconText</field>
+                            <value name="PARAM-0">
+                              <block type="Text">
+                                <field name="TEXT">UPLINK</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
                       </block>
                     </next>
                   </block>
