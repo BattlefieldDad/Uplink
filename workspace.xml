@@ -4072,14 +4072,14 @@
       </block>
     </statement>
   </block>
+  <block type="Text" x="-692" y="5535">
+    <field name="TEXT">IS THIS AN AUDIO BUG??</field>
+  </block>
   <block type="Text" x="128" y="5511">
     <field name="TEXT">set up ,essages so they clear and look nicer</field>
   </block>
   <block type="Text" x="135" y="5590">
     <field name="TEXT">make it so if die on final phase its reset</field>
-  </block>
-  <block type="Text" x="168" y="5718">
-    <field name="TEXT">SEE IF THIS AUDIO PLAYS INSTEAD - MAYBE ISSUE WITH OBJECTIVE TAKEN VO</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="4278" y="5580">
     <field name="SUBROUTINE_NAME">updateProgressMessageTextFromArray</field>
