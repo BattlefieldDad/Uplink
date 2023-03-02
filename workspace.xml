@@ -943,61 +943,61 @@
   <block type="subroutineBlock" deletable="false" x="1737" y="-1852">
     <field name="SUBROUTINE_NAME">startGameMode</field>
     <statement name="ACTIONS">
-      <block type="SetRoundTimeLimit">
+      <block type="SetVariable">
         <value name="VALUE-0">
-          <block type="GetVariable">
+          <block type="variableReferenceBlock">
+            <mutation isObjectVar="false"></mutation>
+            <field name="OBJECTTYPE">Global</field>
+            <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
+          </block>
+        </value>
+        <value name="VALUE-1">
+          <block type="GetTeamId">
             <value name="VALUE-0">
-              <block type="variableReferenceBlock">
-                <mutation isObjectVar="false"></mutation>
-                <field name="OBJECTTYPE">Global</field>
-                <field name="VAR" id="a]9`BmPb9#5h8eTgp^$9" variabletype="Global">maxGameModeTime</field>
+              <block type="Number">
+                <field name="NUM">0</field>
               </block>
             </value>
           </block>
         </value>
         <next>
-          <block type="SetTargetScore">
+          <block type="SetRoundTimeLimit">
             <value name="VALUE-0">
               <block type="GetVariable">
                 <value name="VALUE-0">
                   <block type="variableReferenceBlock">
                     <mutation isObjectVar="false"></mutation>
                     <field name="OBJECTTYPE">Global</field>
-                    <field name="VAR" id="`Q8o~fV9^Y=wtf3U8u_N" variabletype="Global">uplinksRequiredToWin</field>
+                    <field name="VAR" id="a]9`BmPb9#5h8eTgp^$9" variabletype="Global">maxGameModeTime</field>
                   </block>
                 </value>
               </block>
             </value>
             <next>
-              <block type="EnableDefaultScoring">
+              <block type="SetTargetScore">
                 <value name="VALUE-0">
-                  <block type="Boolean">
-                    <field name="BOOL">FALSE</field>
+                  <block type="GetVariable">
+                    <value name="VALUE-0">
+                      <block type="variableReferenceBlock">
+                        <mutation isObjectVar="false"></mutation>
+                        <field name="OBJECTTYPE">Global</field>
+                        <field name="VAR" id="`Q8o~fV9^Y=wtf3U8u_N" variabletype="Global">uplinksRequiredToWin</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
                 <next>
-                  <block type="Wait">
+                  <block type="EnableDefaultScoring">
                     <value name="VALUE-0">
-                      <block type="Number">
-                        <field name="NUM">5</field>
+                      <block type="Boolean">
+                        <field name="BOOL">FALSE</field>
                       </block>
                     </value>
                     <next>
-                      <block type="SetVariable">
+                      <block type="Wait">
                         <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="false"></mutation>
-                            <field name="OBJECTTYPE">Global</field>
-                            <field name="VAR" id="n~~}wDHKg89yD3JRdIhe" variabletype="Global">uplinkDeviceOwner</field>
-                          </block>
-                        </value>
-                        <value name="VALUE-1">
-                          <block type="GetTeamId">
-                            <value name="VALUE-0">
-                              <block type="Number">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
+                          <block type="Number">
+                            <field name="NUM">5</field>
                           </block>
                         </value>
                         <next>
