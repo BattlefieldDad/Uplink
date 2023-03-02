@@ -4166,7 +4166,7 @@
                                   <block type="variableReferenceBlock">
                                     <mutation isObjectVar="false"></mutation>
                                     <field name="OBJECTTYPE">Global</field>
-                                    <field name="VAR" id="cz0eNcSz`p5m}T9HF[#Z" variabletype="Global">transmissionPhaseTime</field>
+                                    <field name="VAR" id="HuK_7P$!0RTEn[([hA}I" variabletype="Global">connectionPhaseTime</field>
                                   </block>
                                 </value>
                               </block>
