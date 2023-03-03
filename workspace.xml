@@ -5567,11 +5567,11 @@
       </block>
     </next>
   </block>
-  <block type="subroutineBlock" deletable="false" x="5470" y="4787">
+  <block type="subroutineBlock" deletable="false" x="5324" y="4589">
     <field name="SUBROUTINE_NAME">updateProgressMessageTextFromArray</field>
     <statement name="ACTIONS">
       <block type="If">
-        <mutation elseif="2"></mutation>
+        <mutation elseif="3"></mutation>
         <value name="VALUE-0">
           <block type="Equals">
             <value name="VALUE-0">
@@ -6011,6 +6011,48 @@
                 </next>
               </block>
             </next>
+          </block>
+        </statement>
+        <value name="IF3">
+          <block type="Equals">
+            <value name="VALUE-0">
+              <block type="GetVariable">
+                <value name="VALUE-0">
+                  <block type="variableReferenceBlock">
+                    <mutation isObjectVar="true"></mutation>
+                    <field name="OBJECTTYPE">TeamId</field>
+                    <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
+                    <value name="OBJECT">
+                      <block type="EventTeam"></block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="VALUE-1">
+              <block type="Text">
+                <field name="TEXT">CONNECTION COMPLETE</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO3">
+          <block type="SetVariable">
+            <value name="VALUE-0">
+              <block type="variableReferenceBlock">
+                <mutation isObjectVar="true"></mutation>
+                <field name="OBJECTTYPE">TeamId</field>
+                <field name="VAR" id=";zZ,.apgy{8obkXk{Kc7" variabletype="TeamId">uplinkProgressText</field>
+                <value name="OBJECT">
+                  <block type="EventTeam"></block>
+                </value>
+              </block>
+            </value>
+            <value name="VALUE-1">
+              <block type="Text">
+                <field name="TEXT">CONNECTION ESTABLISHED</field>
+              </block>
+            </value>
           </block>
         </statement>
       </block>
