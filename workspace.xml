@@ -42,12 +42,12 @@
             <field name="SUBROUTINE_NAME">initialiseMainGameSettings</field>
             <value name="PARAM-0">
               <block type="Number">
-                <field name="NUM">5</field>
+                <field name="NUM">60</field>
               </block>
             </value>
             <value name="PARAM-1">
               <block type="Number">
-                <field name="NUM">5</field>
+                <field name="NUM">30</field>
               </block>
             </value>
             <value name="PARAM-2">
