@@ -8402,7 +8402,7 @@
                     </value>
                     <value name="VALUE-1">
                       <block type="Number">
-                        <field name="NUM">100</field>
+                        <field name="NUM">1</field>
                       </block>
                     </value>
                   </block>
@@ -8599,7 +8599,7 @@
                         </value>
                         <value name="VALUE-1">
                           <block type="Number">
-                            <field name="NUM">100</field>
+                            <field name="NUM">1</field>
                           </block>
                         </value>
                       </block>
