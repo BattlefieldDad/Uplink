@@ -3239,7 +3239,7 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="1816" y="4411">
+  <block type="subroutineBlock" deletable="false" x="1740" y="4400">
     <field name="SUBROUTINE_NAME">startUplinkRespawnCountdownIfNotHeld</field>
     <statement name="ACTIONS">
       <block type="SetVariable">
@@ -3826,7 +3826,7 @@
                                             </value>
                                             <value name="VALUE-1">
                                               <block type="Text">
-                                                <field name="TEXT">TRANSMITTING:[][][][][][][]-[] {}%</field>
+                                                <field name="TEXT">TRANSMITTING:[][][][][][][]- {}%</field>
                                               </block>
                                             </value>
                                           </block>
@@ -3855,7 +3855,7 @@
                                                 </value>
                                                 <value name="VALUE-1">
                                                   <block type="Text">
-                                                    <field name="TEXT">TRANSMITTING:[][][][][][][]-[][] {}%</field>
+                                                    <field name="TEXT">TRANSMITTING:[][][][][][][]-[] {}%</field>
                                                   </block>
                                                 </value>
                                               </block>
@@ -3884,11 +3884,42 @@
                                                     </value>
                                                     <value name="VALUE-1">
                                                       <block type="Text">
-                                                        <field name="TEXT">TRANSMITTING:[][][][][][][]-[][][] {}%</field>
+                                                        <field name="TEXT">TRANSMITTING:[][][][][][][]-[][] {}%</field>
                                                       </block>
                                                     </value>
                                                   </block>
                                                 </value>
+                                                <next>
+                                                  <block type="SetVariable">
+                                                    <value name="VALUE-0">
+                                                      <block type="variableReferenceBlock">
+                                                        <mutation isObjectVar="false"></mutation>
+                                                        <field name="OBJECTTYPE">Global</field>
+                                                        <field name="VAR" id="fpp%3Q4#=Pr$o2GGg%}!" variabletype="Global">progressMessageTextArray</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="VALUE-1">
+                                                      <block type="AppendToArray">
+                                                        <value name="VALUE-0">
+                                                          <block type="GetVariable">
+                                                            <value name="VALUE-0">
+                                                              <block type="variableReferenceBlock">
+                                                                <mutation isObjectVar="false"></mutation>
+                                                                <field name="OBJECTTYPE">Global</field>
+                                                                <field name="VAR" id="fpp%3Q4#=Pr$o2GGg%}!" variabletype="Global">progressMessageTextArray</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <value name="VALUE-1">
+                                                          <block type="Text">
+                                                            <field name="TEXT">TRANSMITTING:[][][][][][][]-[][][] {}%</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </next>
                                               </block>
                                             </next>
                                           </block>
@@ -3911,6 +3942,9 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="Text" x="1440" y="5234">
+    <field name="TEXT">will need adjusting for different phases so will be bigger</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="1472" y="5327">
     <field name="SUBROUTINE_NAME">displayUplinkStatusOnScreen</field>
@@ -3969,11 +4003,6 @@
                 <value name="VALUE-0">
                   <block type="Message">
                     <value name="VALUE-0">
-                      <block type="Text">
-                        <field name="TEXT">YOUR TEAM: {}</field>
-                      </block>
-                    </value>
-                    <value name="VALUE-1">
                       <block type="GetVariable">
                         <value name="VALUE-0">
                           <block type="variableReferenceBlock">
@@ -4055,11 +4084,6 @@
                 <value name="VALUE-0">
                   <block type="Message">
                     <value name="VALUE-0">
-                      <block type="Text">
-                        <field name="TEXT">YOUR TEAM: {}</field>
-                      </block>
-                    </value>
-                    <value name="VALUE-1">
                       <block type="GetVariable">
                         <value name="VALUE-0">
                           <block type="variableReferenceBlock">
