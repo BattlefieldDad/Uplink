@@ -8592,7 +8592,7 @@
                     </value>
                     <value name="VALUE-1">
                       <block type="Number">
-                        <field name="NUM">7</field>
+                        <field name="NUM">70</field>
                       </block>
                     </value>
                   </block>
@@ -8652,5 +8652,8 @@
   </block>
   <block type="Number" x="8373" y="7813">
     <field name="NUM">10</field>
+  </block>
+  <block type="Number" x="8509" y="7814">
+    <field name="NUM">7</field>
   </block>
 </xml>
