@@ -5506,75 +5506,74 @@
                       </block>
                     </value>
                     <next>
-                      <block type="Wait">
+                      <block type="ShowHighlightedGameModeMessage">
                         <value name="VALUE-0">
-                          <block type="Number">
-                            <field name="NUM">0.1</field>
+                          <block type="GetVariable">
+                            <value name="VALUE-0">
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="true"></mutation>
+                                <field name="OBJECTTYPE">TeamId</field>
+                                <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
+                                <value name="OBJECT">
+                                  <block type="GetTeamId">
+                                    <value name="VALUE-0">
+                                      <block type="EventPlayer"></block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
                           </block>
                         </value>
                         <next>
-                          <block type="If">
+                          <block type="Wait">
                             <value name="VALUE-0">
-                              <block type="Equals">
+                              <block type="Number">
+                                <field name="NUM">0.1</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="If">
                                 <value name="VALUE-0">
-                                  <block type="GetVariable">
+                                  <block type="Equals">
                                     <value name="VALUE-0">
-                                      <block type="variableReferenceBlock">
-                                        <mutation isObjectVar="true"></mutation>
-                                        <field name="OBJECTTYPE">TeamId</field>
-                                        <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
-                                        <value name="OBJECT">
-                                          <block type="GetTeamId">
-                                            <value name="VALUE-0">
-                                              <block type="EventPlayer"></block>
+                                      <block type="GetVariable">
+                                        <value name="VALUE-0">
+                                          <block type="variableReferenceBlock">
+                                            <mutation isObjectVar="true"></mutation>
+                                            <field name="OBJECTTYPE">TeamId</field>
+                                            <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
+                                            <value name="OBJECT">
+                                              <block type="GetTeamId">
+                                                <value name="VALUE-0">
+                                                  <block type="EventPlayer"></block>
+                                                </value>
+                                              </block>
                                             </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="VALUE-1">
+                                      <block type="GetVariable">
+                                        <value name="VALUE-0">
+                                          <block type="variableReferenceBlock">
+                                            <mutation isObjectVar="false"></mutation>
+                                            <field name="OBJECTTYPE">Global</field>
+                                            <field name="VAR" id="HuK_7P$!0RTEn[([hA}I" variabletype="Global">connectionPhaseTime</field>
                                           </block>
                                         </value>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
-                                <value name="VALUE-1">
-                                  <block type="GetVariable">
-                                    <value name="VALUE-0">
-                                      <block type="variableReferenceBlock">
-                                        <mutation isObjectVar="false"></mutation>
-                                        <field name="OBJECTTYPE">Global</field>
-                                        <field name="VAR" id="HuK_7P$!0RTEn[([hA}I" variabletype="Global">connectionPhaseTime</field>
-                                      </block>
-                                    </value>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
-                            <statement name="DO">
-                              <block type="SetVariable">
-                                <value name="VALUE-0">
-                                  <block type="variableReferenceBlock">
-                                    <mutation isObjectVar="true"></mutation>
-                                    <field name="OBJECTTYPE">TeamId</field>
-                                    <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
-                                    <value name="OBJECT">
-                                      <block type="GetTeamId">
-                                        <value name="VALUE-0">
-                                          <block type="EventPlayer"></block>
-                                        </value>
-                                      </block>
-                                    </value>
-                                  </block>
-                                </value>
-                                <value name="VALUE-1">
-                                  <block type="Text">
-                                    <field name="TEXT">TRANSMITTING</field>
-                                  </block>
-                                </value>
-                                <next>
+                                <statement name="DO">
                                   <block type="SetVariable">
                                     <value name="VALUE-0">
                                       <block type="variableReferenceBlock">
                                         <mutation isObjectVar="true"></mutation>
                                         <field name="OBJECTTYPE">TeamId</field>
-                                        <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
+                                        <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
                                         <value name="OBJECT">
                                           <block type="GetTeamId">
                                             <value name="VALUE-0">
@@ -5585,37 +5584,60 @@
                                       </block>
                                     </value>
                                     <value name="VALUE-1">
-                                      <block type="Number">
-                                        <field name="NUM">0</field>
+                                      <block type="Text">
+                                        <field name="TEXT">TRANSMITTING</field>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="TriggerAudioAtLocation">
+                                      <block type="SetVariable">
                                         <value name="VALUE-0">
-                                          <block type="LocationalSoundsItem">
-                                            <field name="VALUE-0">LocationalSounds</field>
-                                            <field name="VALUE-1">Alarm_01</field>
-                                          </block>
-                                        </value>
-                                        <value name="VALUE-1">
-                                          <block type="GetSoldierState">
-                                            <value name="VALUE-0">
-                                              <block type="EventPlayer"></block>
-                                            </value>
-                                            <value name="VALUE-1">
-                                              <block type="SoldierStateVectorItem">
-                                                <field name="VALUE-0">SoldierStateVector</field>
-                                                <field name="VALUE-1">GetPosition</field>
+                                          <block type="variableReferenceBlock">
+                                            <mutation isObjectVar="true"></mutation>
+                                            <field name="OBJECTTYPE">TeamId</field>
+                                            <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
+                                            <value name="OBJECT">
+                                              <block type="GetTeamId">
+                                                <value name="VALUE-0">
+                                                  <block type="EventPlayer"></block>
+                                                </value>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
+                                        <value name="VALUE-1">
+                                          <block type="Number">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="TriggerAudioAtLocation">
+                                            <value name="VALUE-0">
+                                              <block type="LocationalSoundsItem">
+                                                <field name="VALUE-0">LocationalSounds</field>
+                                                <field name="VALUE-1">Alarm_01</field>
+                                              </block>
+                                            </value>
+                                            <value name="VALUE-1">
+                                              <block type="GetSoldierState">
+                                                <value name="VALUE-0">
+                                                  <block type="EventPlayer"></block>
+                                                </value>
+                                                <value name="VALUE-1">
+                                                  <block type="SoldierStateVectorItem">
+                                                    <field name="VALUE-0">SoldierStateVector</field>
+                                                    <field name="VALUE-1">GetPosition</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
                                       </block>
                                     </next>
                                   </block>
-                                </next>
+                                </statement>
                               </block>
-                            </statement>
+                            </next>
                           </block>
                         </next>
                       </block>
@@ -6273,7 +6295,7 @@
       </block>
     </statement>
   </block>
-  <block type="Text" x="6278" y="3194">
+  <block type="Text" x="6292" y="3217">
     <field name="TEXT">made edits for finer tracking</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="1745" y="3858">
