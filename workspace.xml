@@ -5508,16 +5508,25 @@
                     <next>
                       <block type="ShowHighlightedGameModeMessage">
                         <value name="VALUE-0">
-                          <block type="GetVariable">
+                          <block type="Message">
                             <value name="VALUE-0">
-                              <block type="variableReferenceBlock">
-                                <mutation isObjectVar="true"></mutation>
-                                <field name="OBJECTTYPE">TeamId</field>
-                                <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
-                                <value name="OBJECT">
-                                  <block type="GetTeamId">
-                                    <value name="VALUE-0">
-                                      <block type="EventPlayer"></block>
+                              <block type="Text">
+                                <field name="TEXT">{}</field>
+                              </block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="GetVariable">
+                                <value name="VALUE-0">
+                                  <block type="variableReferenceBlock">
+                                    <mutation isObjectVar="true"></mutation>
+                                    <field name="OBJECTTYPE">TeamId</field>
+                                    <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
+                                    <value name="OBJECT">
+                                      <block type="GetTeamId">
+                                        <value name="VALUE-0">
+                                          <block type="EventPlayer"></block>
+                                        </value>
+                                      </block>
                                     </value>
                                   </block>
                                 </value>
