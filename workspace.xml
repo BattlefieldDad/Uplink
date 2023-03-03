@@ -1650,9 +1650,6 @@
       </block>
     </statement>
   </block>
-  <block type="Text" x="-207" y="937">
-    <field name="TEXT">rule 11</field>
-  </block>
   <block type="subroutineBlock" deletable="false" x="1717" y="889">
     <field name="SUBROUTINE_NAME">playerMessageOnDeviceActivated</field>
     <statement name="ACTIONS">
@@ -2355,7 +2352,7 @@
                         </value>
                         <value name="VALUE-1">
                           <block type="Number">
-                            <field name="NUM">1</field>
+                            <field name="NUM">0.1</field>
                           </block>
                         </value>
                       </block>
@@ -2364,7 +2361,7 @@
                       <block type="Wait">
                         <value name="VALUE-0">
                           <block type="Number">
-                            <field name="NUM">1</field>
+                            <field name="NUM">0.1</field>
                           </block>
                         </value>
                         <next>
@@ -2656,7 +2653,7 @@
                             </value>
                             <value name="VALUE-1">
                               <block type="Number">
-                                <field name="NUM">1</field>
+                                <field name="NUM">0.1</field>
                               </block>
                             </value>
                           </block>
@@ -2665,7 +2662,7 @@
                           <block type="Wait">
                             <value name="VALUE-0">
                               <block type="Number">
-                                <field name="NUM">1</field>
+                                <field name="NUM">0.1</field>
                               </block>
                             </value>
                             <next>
@@ -3127,6 +3124,9 @@
         </statement>
       </block>
     </statement>
+  </block>
+  <block type="Text" x="6278" y="3194">
+    <field name="TEXT">made edits for finer tracking</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="1745" y="3858">
     <mutation>
