@@ -8315,10 +8315,72 @@
                                             <value name="VALUE-0">
                                               <block type="LessThan">
                                                 <value name="VALUE-0">
-                                                  <block type="DistanceBetween"></block>
+                                                  <block type="DistanceBetween">
+                                                    <value name="VALUE-0">
+                                                      <block type="GetVariable">
+                                                        <value name="VALUE-0">
+                                                          <block type="variableReferenceBlock">
+                                                            <mutation isObjectVar="true"></mutation>
+                                                            <field name="OBJECTTYPE">TeamId</field>
+                                                            <field name="VAR" id="_;4e@ZpXIKP8}0ZN84UY" variabletype="TeamId">distanceFromUplink</field>
+                                                            <value name="OBJECT">
+                                                              <block type="GetTeamId">
+                                                                <value name="VALUE-0">
+                                                                  <block type="Number">
+                                                                    <field name="NUM">1</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="VALUE-1">
+                                                      <block type="GetVariable">
+                                                        <value name="VALUE-0">
+                                                          <block type="variableReferenceBlock">
+                                                            <mutation isObjectVar="true"></mutation>
+                                                            <field name="OBJECTTYPE">TeamId</field>
+                                                            <field name="VAR" id="_;4e@ZpXIKP8}0ZN84UY" variabletype="TeamId">distanceFromUplink</field>
+                                                            <value name="OBJECT">
+                                                              <block type="GetTeamId">
+                                                                <value name="VALUE-0">
+                                                                  <block type="Number">
+                                                                    <field name="NUM">1</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="VALUE-1">
+                                                  <block type="Number">
+                                                    <field name="NUM">150</field>
+                                                  </block>
                                                 </value>
                                               </block>
                                             </value>
+                                            <statement name="DO">
+                                              <block type="SetVariable">
+                                                <value name="VALUE-0">
+                                                  <block type="variableReferenceBlock">
+                                                    <mutation isObjectVar="false"></mutation>
+                                                    <field name="OBJECTTYPE">Global</field>
+                                                    <field name="VAR" id="U{?y`3Z~xs}AaY))!6dU" variabletype="Global">uplinkSpawnLocationAccepted</field>
+                                                  </block>
+                                                </value>
+                                                <value name="VALUE-1">
+                                                  <block type="Boolean">
+                                                    <field name="BOOL">TRUE</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </statement>
                                           </block>
                                         </next>
                                       </block>
@@ -8349,6 +8411,55 @@
                                     </value>
                                   </block>
                                 </value>
+                                <statement name="DO1">
+                                  <block type="If">
+                                    <value name="VALUE-0">
+                                      <block type="GreaterThan">
+                                        <value name="VALUE-0">
+                                          <block type="GetVariable">
+                                            <value name="VALUE-0">
+                                              <block type="variableReferenceBlock">
+                                                <mutation isObjectVar="true"></mutation>
+                                                <field name="OBJECTTYPE">TeamId</field>
+                                                <field name="VAR" id="_;4e@ZpXIKP8}0ZN84UY" variabletype="TeamId">distanceFromUplink</field>
+                                                <value name="OBJECT">
+                                                  <block type="GetTeamId">
+                                                    <value name="VALUE-0">
+                                                      <block type="Number">
+                                                        <field name="NUM">1</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="VALUE-1">
+                                          <block type="Number">
+                                            <field name="NUM">150</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="SetVariable">
+                                        <value name="VALUE-0">
+                                          <block type="variableReferenceBlock">
+                                            <mutation isObjectVar="false"></mutation>
+                                            <field name="OBJECTTYPE">Global</field>
+                                            <field name="VAR" id="U{?y`3Z~xs}AaY))!6dU" variabletype="Global">uplinkSpawnLocationAccepted</field>
+                                          </block>
+                                        </value>
+                                        <value name="VALUE-1">
+                                          <block type="Boolean">
+                                            <field name="BOOL">TRUE</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </statement>
                                 <value name="IF2">
                                   <block type="IsPlayerValid">
                                     <value name="VALUE-0">
@@ -8373,6 +8484,55 @@
                                     </value>
                                   </block>
                                 </value>
+                                <statement name="DO2">
+                                  <block type="If">
+                                    <value name="VALUE-0">
+                                      <block type="GreaterThan">
+                                        <value name="VALUE-0">
+                                          <block type="GetVariable">
+                                            <value name="VALUE-0">
+                                              <block type="variableReferenceBlock">
+                                                <mutation isObjectVar="true"></mutation>
+                                                <field name="OBJECTTYPE">TeamId</field>
+                                                <field name="VAR" id="_;4e@ZpXIKP8}0ZN84UY" variabletype="TeamId">distanceFromUplink</field>
+                                                <value name="OBJECT">
+                                                  <block type="GetTeamId">
+                                                    <value name="VALUE-0">
+                                                      <block type="Number">
+                                                        <field name="NUM">2</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="VALUE-1">
+                                          <block type="Number">
+                                            <field name="NUM">150</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="SetVariable">
+                                        <value name="VALUE-0">
+                                          <block type="variableReferenceBlock">
+                                            <mutation isObjectVar="false"></mutation>
+                                            <field name="OBJECTTYPE">Global</field>
+                                            <field name="VAR" id="U{?y`3Z~xs}AaY))!6dU" variabletype="Global">uplinkSpawnLocationAccepted</field>
+                                          </block>
+                                        </value>
+                                        <value name="VALUE-1">
+                                          <block type="Boolean">
+                                            <field name="BOOL">TRUE</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </statement>
                                 <statement name="ELSE">
                                   <block type="SetVariable">
                                     <value name="VALUE-0">
