@@ -7201,6 +7201,7 @@
       </block>
     </statement>
   </block>
+  <block type="SpotTarget" x="587" y="4717"></block>
   <block type="subroutineBlock" deletable="false" x="5350" y="4486">
     <field name="SUBROUTINE_NAME">updateProgressMessageTextFromArray</field>
     <statement name="ACTIONS">
@@ -7734,6 +7735,13 @@
       </block>
     </statement>
   </block>
+  <block type="subroutineBlock" deletable="false" x="454" y="4828">
+    <mutation>
+      <parameter types="TeamId">teamID</parameter>
+    </mutation>
+    <field name="SUBROUTINE_NAME">spotAllPlayersOnOpposingSide</field>
+  </block>
+  <block type="ForVariable" x="541" y="5089"></block>
   <block type="subroutineBlock" deletable="false" x="-1129" y="5393">
     <field name="SUBROUTINE_NAME">connectionComplete</field>
     <statement name="ACTIONS">
@@ -8652,12 +8660,6 @@
         </next>
       </block>
     </statement>
-  </block>
-  <block type="Text" x="128" y="5511">
-    <field name="TEXT">set up ,essages so they clear and look nicer</field>
-  </block>
-  <block type="Text" x="135" y="5590">
-    <field name="TEXT">make it so if die on final phase its reset</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="5349" y="5798">
     <field name="SUBROUTINE_NAME">displayUplinkStatusOnScreen</field>
