@@ -8416,7 +8416,7 @@
                                                     </value>
                                                     <value name="VALUE-1">
                                                       <block type="Number">
-                                                        <field name="NUM">150</field>
+                                                        <field name="NUM">50</field>
                                                       </block>
                                                     </value>
                                                   </block>
@@ -8493,7 +8493,7 @@
                                             </value>
                                             <value name="VALUE-1">
                                               <block type="Number">
-                                                <field name="NUM">150</field>
+                                                <field name="NUM">50</field>
                                               </block>
                                             </value>
                                           </block>
@@ -8566,7 +8566,7 @@
                                             </value>
                                             <value name="VALUE-1">
                                               <block type="Number">
-                                                <field name="NUM">150</field>
+                                                <field name="NUM">50</field>
                                               </block>
                                             </value>
                                           </block>
