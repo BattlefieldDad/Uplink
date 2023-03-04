@@ -838,7 +838,7 @@
                                                                             </value>
                                                                             <value name="VALUE-1">
                                                                               <block type="Text">
-                                                                                <field name="TEXT">CONNECTING</field>
+                                                                                <field name="TEXT">TRANSMITTING</field>
                                                                               </block>
                                                                             </value>
                                                                           </block>
