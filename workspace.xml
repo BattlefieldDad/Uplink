@@ -6311,6 +6311,15 @@
                         </next>
                       </block>
                     </statement>
+                    <next>
+                      <block type="Wait">
+                        <value name="VALUE-0">
+                          <block type="Number">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
@@ -6393,7 +6402,7 @@
                 </value>
                 <statement name="DO">
                   <block type="If">
-                    <mutation elseif="2"></mutation>
+                    <mutation elseif="3"></mutation>
                     <value name="VALUE-0">
                       <block type="Equals">
                         <value name="VALUE-0">
@@ -6733,9 +6742,71 @@
                         </value>
                       </block>
                     </statement>
+                    <value name="IF3">
+                      <block type="Equals">
+                        <value name="VALUE-0">
+                          <block type="GetVariable">
+                            <value name="VALUE-0">
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="true"></mutation>
+                                <field name="OBJECTTYPE">TeamId</field>
+                                <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
+                                <value name="OBJECT">
+                                  <block type="GetTeamId">
+                                    <value name="VALUE-0">
+                                      <block type="Number">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="Text">
+                            <field name="TEXT">CONNECTION COMPLETE</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO3">
+                      <block type="DisplayCustomNotificationMessage">
+                        <value name="VALUE-0">
+                          <block type="Message">
+                            <value name="VALUE-0">
+                              <block type="Text">
+                                <field name="TEXT">CONNECTION COMPLETE!</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="CustomMessagesItem">
+                            <field name="VALUE-0">CustomMessages</field>
+                            <field name="VALUE-1">MessageText2</field>
+                          </block>
+                        </value>
+                        <value name="VALUE-2">
+                          <block type="Number">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <value name="VALUE-3">
+                          <block type="GetTeamId">
+                            <value name="VALUE-0">
+                              <block type="Number">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
                     <next>
                       <block type="If">
-                        <mutation elseif="2"></mutation>
+                        <mutation elseif="3"></mutation>
                         <value name="VALUE-0">
                           <block type="Equals">
                             <value name="VALUE-0">
@@ -7075,13 +7146,75 @@
                             </value>
                           </block>
                         </statement>
+                        <value name="IF3">
+                          <block type="Equals">
+                            <value name="VALUE-0">
+                              <block type="GetVariable">
+                                <value name="VALUE-0">
+                                  <block type="variableReferenceBlock">
+                                    <mutation isObjectVar="true"></mutation>
+                                    <field name="OBJECTTYPE">TeamId</field>
+                                    <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
+                                    <value name="OBJECT">
+                                      <block type="GetTeamId">
+                                        <value name="VALUE-0">
+                                          <block type="Number">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="Text">
+                                <field name="TEXT">CONNECTION COMPLETE</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO3">
+                          <block type="DisplayCustomNotificationMessage">
+                            <value name="VALUE-0">
+                              <block type="Message">
+                                <value name="VALUE-0">
+                                  <block type="Text">
+                                    <field name="TEXT">CONNECTION COMPLETE!</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="CustomMessagesItem">
+                                <field name="VALUE-0">CustomMessages</field>
+                                <field name="VALUE-1">MessageText4</field>
+                              </block>
+                            </value>
+                            <value name="VALUE-2">
+                              <block type="Number">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="VALUE-3">
+                              <block type="GetTeamId">
+                                <value name="VALUE-0">
+                                  <block type="Number">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
                       </block>
                     </next>
                   </block>
                 </statement>
                 <statement name="ELSE">
                   <block type="If">
-                    <mutation elseif="2"></mutation>
+                    <mutation elseif="3"></mutation>
                     <value name="VALUE-0">
                       <block type="Equals">
                         <value name="VALUE-0">
@@ -7421,9 +7554,71 @@
                         </value>
                       </block>
                     </statement>
+                    <value name="IF3">
+                      <block type="Equals">
+                        <value name="VALUE-0">
+                          <block type="GetVariable">
+                            <value name="VALUE-0">
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="true"></mutation>
+                                <field name="OBJECTTYPE">TeamId</field>
+                                <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
+                                <value name="OBJECT">
+                                  <block type="GetTeamId">
+                                    <value name="VALUE-0">
+                                      <block type="Number">
+                                        <field name="NUM">2</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="Text">
+                            <field name="TEXT">DISCONNECTED</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO3">
+                      <block type="DisplayCustomNotificationMessage">
+                        <value name="VALUE-0">
+                          <block type="Message">
+                            <value name="VALUE-0">
+                              <block type="Text">
+                                <field name="TEXT">CONNECTION COMPLETE!</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="CustomMessagesItem">
+                            <field name="VALUE-0">CustomMessages</field>
+                            <field name="VALUE-1">MessageText2</field>
+                          </block>
+                        </value>
+                        <value name="VALUE-2">
+                          <block type="Number">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <value name="VALUE-3">
+                          <block type="GetTeamId">
+                            <value name="VALUE-0">
+                              <block type="Number">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
                     <next>
                       <block type="If">
-                        <mutation elseif="2"></mutation>
+                        <mutation elseif="3"></mutation>
                         <value name="VALUE-0">
                           <block type="Equals">
                             <value name="VALUE-0">
@@ -7737,6 +7932,68 @@
                                 <value name="VALUE-0">
                                   <block type="Text">
                                     <field name="TEXT">DISCONNECTED</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="CustomMessagesItem">
+                                <field name="VALUE-0">CustomMessages</field>
+                                <field name="VALUE-1">MessageText4</field>
+                              </block>
+                            </value>
+                            <value name="VALUE-2">
+                              <block type="Number">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="VALUE-3">
+                              <block type="GetTeamId">
+                                <value name="VALUE-0">
+                                  <block type="Number">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <value name="IF3">
+                          <block type="Equals">
+                            <value name="VALUE-0">
+                              <block type="GetVariable">
+                                <value name="VALUE-0">
+                                  <block type="variableReferenceBlock">
+                                    <mutation isObjectVar="true"></mutation>
+                                    <field name="OBJECTTYPE">TeamId</field>
+                                    <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
+                                    <value name="OBJECT">
+                                      <block type="GetTeamId">
+                                        <value name="VALUE-0">
+                                          <block type="Number">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="Text">
+                                <field name="TEXT">CONNECTION COMPLETE</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO3">
+                          <block type="DisplayCustomNotificationMessage">
+                            <value name="VALUE-0">
+                              <block type="Message">
+                                <value name="VALUE-0">
+                                  <block type="Text">
+                                    <field name="TEXT">CONNECTION COMPLETE!</field>
                                   </block>
                                 </value>
                               </block>
