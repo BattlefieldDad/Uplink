@@ -6059,7 +6059,9 @@
                                               </block>
                                             </value>
                                             <value name="VALUE-1">
-                                              <block type="ZComponentOf"></block>
+                                              <block type="Boolean">
+                                                <field name="BOOL">FALSE</field>
+                                              </block>
                                             </value>
                                             <next>
                                               <block type="subroutineInstanceBlock">
@@ -6782,9 +6784,6 @@
         </next>
       </block>
     </statement>
-  </block>
-  <block type="Boolean" x="5205" y="4249">
-    <field name="BOOL">FALSE</field>
   </block>
   <block type="SetVariable" x="9418" y="4107">
     <value name="VALUE-0">
