@@ -390,7 +390,7 @@
                                                     </value>
                                                     <value name="VALUE-1">
                                                       <block type="Number">
-                                                        <field name="NUM">40</field>
+                                                        <field name="NUM">20</field>
                                                       </block>
                                                     </value>
                                                   </block>
