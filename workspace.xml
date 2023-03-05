@@ -935,41 +935,49 @@
                   <block type="Message">
                     <value name="VALUE-0">
                       <block type="Text">
-                        <field name="TEXT">TEAM 1 DISTANCE {} : TEAM 2 DISTANCE {}</field>
+                        <field name="TEXT">DIFFERENCE {}</field>
                       </block>
                     </value>
                     <value name="VALUE-1">
-                      <block type="GetVariable">
+                      <block type="RoundToInteger">
                         <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="true"></mutation>
-                            <field name="OBJECTTYPE">TeamId</field>
-                            <field name="VAR" id="_;4e@ZpXIKP8}0ZN84UY" variabletype="TeamId">distanceFromUplink</field>
-                            <value name="OBJECT">
-                              <block type="GetTeamId">
+                          <block type="Subtract">
+                            <value name="VALUE-0">
+                              <block type="GetVariable">
                                 <value name="VALUE-0">
-                                  <block type="Number">
-                                    <field name="NUM">1</field>
+                                  <block type="variableReferenceBlock">
+                                    <mutation isObjectVar="true"></mutation>
+                                    <field name="OBJECTTYPE">TeamId</field>
+                                    <field name="VAR" id="_;4e@ZpXIKP8}0ZN84UY" variabletype="TeamId">distanceFromUplink</field>
+                                    <value name="OBJECT">
+                                      <block type="GetTeamId">
+                                        <value name="VALUE-0">
+                                          <block type="Number">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
                                   </block>
                                 </value>
                               </block>
                             </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="VALUE-2">
-                      <block type="GetVariable">
-                        <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="true"></mutation>
-                            <field name="OBJECTTYPE">TeamId</field>
-                            <field name="VAR" id="_;4e@ZpXIKP8}0ZN84UY" variabletype="TeamId">distanceFromUplink</field>
-                            <value name="OBJECT">
-                              <block type="GetTeamId">
+                            <value name="VALUE-1">
+                              <block type="GetVariable">
                                 <value name="VALUE-0">
-                                  <block type="Number">
-                                    <field name="NUM">2</field>
+                                  <block type="variableReferenceBlock">
+                                    <mutation isObjectVar="true"></mutation>
+                                    <field name="OBJECTTYPE">TeamId</field>
+                                    <field name="VAR" id="_;4e@ZpXIKP8}0ZN84UY" variabletype="TeamId">distanceFromUplink</field>
+                                    <value name="OBJECT">
+                                      <block type="GetTeamId">
+                                        <value name="VALUE-0">
+                                          <block type="Number">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
                                   </block>
                                 </value>
                               </block>
