@@ -5672,116 +5672,75 @@
                       </block>
                     </value>
                     <next>
-                      <block type="ShowHighlightedGameModeMessage">
+                      <block type="Wait">
                         <value name="VALUE-0">
-                          <block type="Message">
+                          <block type="Number">
+                            <field name="NUM">0.1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="If">
                             <value name="VALUE-0">
-                              <block type="Text">
-                                <field name="TEXT">{}</field>
-                              </block>
-                            </value>
-                            <value name="VALUE-1">
-                              <block type="Multiply">
+                              <block type="GreaterThanEqualTo">
                                 <value name="VALUE-0">
-                                  <block type="Multiply">
+                                  <block type="GetVariable">
                                     <value name="VALUE-0">
-                                      <block type="Divide">
-                                        <value name="VALUE-0">
-                                          <block type="GetVariable">
+                                      <block type="variableReferenceBlock">
+                                        <mutation isObjectVar="true"></mutation>
+                                        <field name="OBJECTTYPE">TeamId</field>
+                                        <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
+                                        <value name="OBJECT">
+                                          <block type="GetTeamId">
                                             <value name="VALUE-0">
-                                              <block type="variableReferenceBlock">
-                                                <mutation isObjectVar="true"></mutation>
-                                                <field name="OBJECTTYPE">TeamId</field>
-                                                <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
-                                                <value name="OBJECT">
-                                                  <block type="GetTeamId">
-                                                    <value name="VALUE-0">
-                                                      <block type="EventPlayer"></block>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                              </block>
+                                              <block type="EventPlayer"></block>
                                             </value>
                                           </block>
                                         </value>
-                                        <value name="VALUE-1">
-                                          <block type="GetVariable">
-                                            <value name="VALUE-0">
-                                              <block type="variableReferenceBlock">
-                                                <mutation isObjectVar="false"></mutation>
-                                                <field name="OBJECTTYPE">Global</field>
-                                                <field name="VAR" id="HuK_7P$!0RTEn[([hA}I" variabletype="Global">connectionPhaseTime</field>
-                                              </block>
-                                            </value>
-                                          </block>
-                                        </value>
-                                      </block>
-                                    </value>
-                                    <value name="VALUE-1">
-                                      <block type="Number">
-                                        <field name="NUM">100</field>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
                                 <value name="VALUE-1">
-                                  <block type="Number">
-                                    <field name="NUM">0.7</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <next>
-                          <block type="Wait">
-                            <value name="VALUE-0">
-                              <block type="Number">
-                                <field name="NUM">0.1</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="If">
-                                <value name="VALUE-0">
-                                  <block type="GreaterThanEqualTo">
+                                  <block type="GetVariable">
                                     <value name="VALUE-0">
-                                      <block type="GetVariable">
-                                        <value name="VALUE-0">
-                                          <block type="variableReferenceBlock">
-                                            <mutation isObjectVar="true"></mutation>
-                                            <field name="OBJECTTYPE">TeamId</field>
-                                            <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
-                                            <value name="OBJECT">
-                                              <block type="GetTeamId">
-                                                <value name="VALUE-0">
-                                                  <block type="EventPlayer"></block>
-                                                </value>
-                                              </block>
-                                            </value>
-                                          </block>
-                                        </value>
+                                      <block type="variableReferenceBlock">
+                                        <mutation isObjectVar="false"></mutation>
+                                        <field name="OBJECTTYPE">Global</field>
+                                        <field name="VAR" id="HuK_7P$!0RTEn[([hA}I" variabletype="Global">connectionPhaseTime</field>
                                       </block>
                                     </value>
-                                    <value name="VALUE-1">
-                                      <block type="GetVariable">
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="SetVariable">
+                                <value name="VALUE-0">
+                                  <block type="variableReferenceBlock">
+                                    <mutation isObjectVar="true"></mutation>
+                                    <field name="OBJECTTYPE">TeamId</field>
+                                    <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
+                                    <value name="OBJECT">
+                                      <block type="GetTeamId">
                                         <value name="VALUE-0">
-                                          <block type="variableReferenceBlock">
-                                            <mutation isObjectVar="false"></mutation>
-                                            <field name="OBJECTTYPE">Global</field>
-                                            <field name="VAR" id="HuK_7P$!0RTEn[([hA}I" variabletype="Global">connectionPhaseTime</field>
-                                          </block>
+                                          <block type="EventPlayer"></block>
                                         </value>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
-                                <statement name="DO">
+                                <value name="VALUE-1">
+                                  <block type="Text">
+                                    <field name="TEXT">TRANSMITTING</field>
+                                  </block>
+                                </value>
+                                <next>
                                   <block type="SetVariable">
                                     <value name="VALUE-0">
                                       <block type="variableReferenceBlock">
                                         <mutation isObjectVar="true"></mutation>
                                         <field name="OBJECTTYPE">TeamId</field>
-                                        <field name="VAR" id="i[st-%KxM(646CkC@~_." variabletype="TeamId">uplinkPhase</field>
+                                        <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
                                         <value name="OBJECT">
                                           <block type="GetTeamId">
                                             <value name="VALUE-0">
@@ -5792,60 +5751,37 @@
                                       </block>
                                     </value>
                                     <value name="VALUE-1">
-                                      <block type="Text">
-                                        <field name="TEXT">TRANSMITTING</field>
+                                      <block type="Number">
+                                        <field name="NUM">0</field>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="SetVariable">
+                                      <block type="TriggerAudioAtLocation">
                                         <value name="VALUE-0">
-                                          <block type="variableReferenceBlock">
-                                            <mutation isObjectVar="true"></mutation>
-                                            <field name="OBJECTTYPE">TeamId</field>
-                                            <field name="VAR" id="px=]ig4~L!jVVjNxGaOl" variabletype="TeamId">uplinkProgress</field>
-                                            <value name="OBJECT">
-                                              <block type="GetTeamId">
-                                                <value name="VALUE-0">
-                                                  <block type="EventPlayer"></block>
-                                                </value>
-                                              </block>
-                                            </value>
+                                          <block type="LocationalSoundsItem">
+                                            <field name="VALUE-0">LocationalSounds</field>
+                                            <field name="VALUE-1">Alarm_01</field>
                                           </block>
                                         </value>
                                         <value name="VALUE-1">
-                                          <block type="Number">
-                                            <field name="NUM">0</field>
-                                          </block>
-                                        </value>
-                                        <next>
-                                          <block type="TriggerAudioAtLocation">
+                                          <block type="GetSoldierState">
                                             <value name="VALUE-0">
-                                              <block type="LocationalSoundsItem">
-                                                <field name="VALUE-0">LocationalSounds</field>
-                                                <field name="VALUE-1">Alarm_01</field>
-                                              </block>
+                                              <block type="EventPlayer"></block>
                                             </value>
                                             <value name="VALUE-1">
-                                              <block type="GetSoldierState">
-                                                <value name="VALUE-0">
-                                                  <block type="EventPlayer"></block>
-                                                </value>
-                                                <value name="VALUE-1">
-                                                  <block type="SoldierStateVectorItem">
-                                                    <field name="VALUE-0">SoldierStateVector</field>
-                                                    <field name="VALUE-1">GetPosition</field>
-                                                  </block>
-                                                </value>
+                                              <block type="SoldierStateVectorItem">
+                                                <field name="VALUE-0">SoldierStateVector</field>
+                                                <field name="VALUE-1">GetPosition</field>
                                               </block>
                                             </value>
                                           </block>
-                                        </next>
+                                        </value>
                                       </block>
                                     </next>
                                   </block>
-                                </statement>
+                                </next>
                               </block>
-                            </next>
+                            </statement>
                           </block>
                         </next>
                       </block>
@@ -6661,6 +6597,150 @@
       </block>
     </statement>
   </block>
+  <block type="subroutineBlock" deletable="false" x="-181" y="4346">
+    <mutation>
+      <parameter types="TeamId">teamID</parameter>
+    </mutation>
+    <field name="SUBROUTINE_NAME">spotAllPlayersOnOpposingSide</field>
+    <statement name="ACTIONS">
+      <block type="ShowHighlightedGameModeMessage">
+        <value name="VALUE-0">
+          <block type="Message">
+            <value name="VALUE-0">
+              <block type="Text">
+                <field name="TEXT">ENEMY TEAM SPOTTED</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="VALUE-1">
+          <block type="EventTeam"></block>
+        </value>
+        <next>
+          <block type="ShowHighlightedGameModeMessage">
+            <value name="VALUE-0">
+              <block type="Message">
+                <value name="VALUE-0">
+                  <block type="Text">
+                    <field name="TEXT">YOU ARE SPOTTED</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="VALUE-1">
+              <block type="GetTeamId">
+                <value name="VALUE-0">
+                  <block type="subroutineArgumentBlock">
+                    <field name="ARGUMENT_INDEX">-1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="ForVariable">
+                <value name="VALUE-0">
+                  <block type="variableReferenceBlock">
+                    <mutation isObjectVar="false"></mutation>
+                    <field name="OBJECTTYPE">Global</field>
+                    <field name="VAR" id="GQp2pfCIiNrs1{joR:*(" variabletype="Global">spotcounter</field>
+                  </block>
+                </value>
+                <value name="VALUE-1">
+                  <block type="Number">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="VALUE-2">
+                  <block type="CountOf">
+                    <value name="VALUE-0">
+                      <block type="AllPlayers"></block>
+                    </value>
+                  </block>
+                </value>
+                <value name="VALUE-3">
+                  <block type="Number">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="If">
+                    <value name="VALUE-0">
+                      <block type="Equals">
+                        <value name="VALUE-0">
+                          <block type="GetTeamId">
+                            <value name="VALUE-0">
+                              <block type="ValueInArray">
+                                <value name="VALUE-0">
+                                  <block type="AllPlayers"></block>
+                                </value>
+                                <value name="VALUE-1">
+                                  <block type="GetVariable">
+                                    <value name="VALUE-0">
+                                      <block type="variableReferenceBlock">
+                                        <mutation isObjectVar="false"></mutation>
+                                        <field name="OBJECTTYPE">Global</field>
+                                        <field name="VAR" id="GQp2pfCIiNrs1{joR:*(" variabletype="Global">spotcounter</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="GetTeamId">
+                            <value name="VALUE-0">
+                              <block type="subroutineArgumentBlock">
+                                <field name="ARGUMENT_INDEX">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="SpotTarget">
+                        <value name="VALUE-0">
+                          <block type="ValueInArray">
+                            <value name="VALUE-0">
+                              <block type="AllPlayers"></block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="GetVariable">
+                                <value name="VALUE-0">
+                                  <block type="variableReferenceBlock">
+                                    <mutation isObjectVar="false"></mutation>
+                                    <field name="OBJECTTYPE">Global</field>
+                                    <field name="VAR" id="GQp2pfCIiNrs1{joR:*(" variabletype="Global">spotcounter</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="GetVariable">
+                            <value name="VALUE-0">
+                              <block type="variableReferenceBlock">
+                                <mutation isObjectVar="false"></mutation>
+                                <field name="OBJECTTYPE">Global</field>
+                                <field name="VAR" id="^~2TzrM;DNuW*]r?#_*d" variabletype="Global">secondsToSpotEnemies</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
   <block type="subroutineBlock" deletable="false" x="1740" y="4400">
     <field name="SUBROUTINE_NAME">startUplinkRespawnCountdownIfNotHeld</field>
     <statement name="ACTIONS">
@@ -7211,112 +7291,6 @@
         </next>
       </block>
     </next>
-  </block>
-  <block type="subroutineBlock" deletable="false" x="-103" y="4630">
-    <mutation>
-      <parameter types="TeamId">teamID</parameter>
-    </mutation>
-    <field name="SUBROUTINE_NAME">spotAllPlayersOnOpposingSide</field>
-    <statement name="ACTIONS">
-      <block type="ForVariable">
-        <value name="VALUE-0">
-          <block type="variableReferenceBlock">
-            <mutation isObjectVar="false"></mutation>
-            <field name="OBJECTTYPE">Global</field>
-            <field name="VAR" id="GQp2pfCIiNrs1{joR:*(" variabletype="Global">spotcounter</field>
-          </block>
-        </value>
-        <value name="VALUE-1">
-          <block type="Number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="VALUE-2">
-          <block type="CountOf">
-            <value name="VALUE-0">
-              <block type="AllPlayers"></block>
-            </value>
-          </block>
-        </value>
-        <value name="VALUE-3">
-          <block type="Number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <statement name="DO">
-          <block type="If">
-            <value name="VALUE-0">
-              <block type="Equals">
-                <value name="VALUE-0">
-                  <block type="GetTeamId">
-                    <value name="VALUE-0">
-                      <block type="ValueInArray">
-                        <value name="VALUE-0">
-                          <block type="AllPlayers"></block>
-                        </value>
-                        <value name="VALUE-1">
-                          <block type="GetVariable">
-                            <value name="VALUE-0">
-                              <block type="variableReferenceBlock">
-                                <mutation isObjectVar="false"></mutation>
-                                <field name="OBJECTTYPE">Global</field>
-                                <field name="VAR" id="GQp2pfCIiNrs1{joR:*(" variabletype="Global">spotcounter</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <value name="VALUE-1">
-                  <block type="GetTeamId">
-                    <value name="VALUE-0">
-                      <block type="subroutineArgumentBlock">
-                        <field name="ARGUMENT_INDEX">0</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO">
-              <block type="SpotTarget">
-                <value name="VALUE-0">
-                  <block type="ValueInArray">
-                    <value name="VALUE-0">
-                      <block type="AllPlayers"></block>
-                    </value>
-                    <value name="VALUE-1">
-                      <block type="GetVariable">
-                        <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="false"></mutation>
-                            <field name="OBJECTTYPE">Global</field>
-                            <field name="VAR" id="GQp2pfCIiNrs1{joR:*(" variabletype="Global">spotcounter</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <value name="VALUE-1">
-                  <block type="GetVariable">
-                    <value name="VALUE-0">
-                      <block type="variableReferenceBlock">
-                        <mutation isObjectVar="false"></mutation>
-                        <field name="OBJECTTYPE">Global</field>
-                        <field name="VAR" id="^~2TzrM;DNuW*]r?#_*d" variabletype="Global">secondsToSpotEnemies</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-              </block>
-            </statement>
-          </block>
-        </statement>
-      </block>
-    </statement>
   </block>
   <block type="subroutineBlock" deletable="false" x="-1134" y="4801">
     <field name="SUBROUTINE_NAME">trackUplinkPositionWhileHeld</field>
