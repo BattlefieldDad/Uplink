@@ -4838,7 +4838,7 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="2516" y="-2067">
+  <block type="subroutineBlock" deletable="false" x="2415" y="-2065">
     <field name="SUBROUTINE_NAME">trackUplinkPositionWhileHeld</field>
     <statement name="ACTIONS">
       <block type="subroutineInstanceBlock">
@@ -6637,7 +6637,7 @@
   <block type="Text" x="6332" y="-1927">
     <field name="TEXT">WHILE HOLDING UPLINK PROGRESS INCREASES</field>
   </block>
-  <block type="subroutineBlock" deletable="false" x="6342" y="-1860">
+  <block type="subroutineBlock" deletable="false" x="6428" y="-1837">
     <field name="SUBROUTINE_NAME">startUplinkProgression</field>
     <statement name="ACTIONS">
       <block type="If">
@@ -6972,26 +6972,39 @@
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="TriggerAudioAtLocation">
+                                      <block type="ShowHighlightedGameModeMessage">
                                         <value name="VALUE-0">
-                                          <block type="LocationalSoundsItem">
-                                            <field name="VALUE-0">LocationalSounds</field>
-                                            <field name="VALUE-1">Alarm_01</field>
-                                          </block>
-                                        </value>
-                                        <value name="VALUE-1">
-                                          <block type="GetSoldierState">
+                                          <block type="Message">
                                             <value name="VALUE-0">
-                                              <block type="EventPlayer"></block>
-                                            </value>
-                                            <value name="VALUE-1">
-                                              <block type="SoldierStateVectorItem">
-                                                <field name="VALUE-0">SoldierStateVector</field>
-                                                <field name="VALUE-1">GetPosition</field>
+                                              <block type="Text">
+                                                <field name="TEXT">UPLINK LOCKED - DROP UPLINK DISABLED</field>
                                               </block>
                                             </value>
                                           </block>
                                         </value>
+                                        <next>
+                                          <block type="TriggerAudioAtLocation">
+                                            <value name="VALUE-0">
+                                              <block type="LocationalSoundsItem">
+                                                <field name="VALUE-0">LocationalSounds</field>
+                                                <field name="VALUE-1">Alarm_01</field>
+                                              </block>
+                                            </value>
+                                            <value name="VALUE-1">
+                                              <block type="GetSoldierState">
+                                                <value name="VALUE-0">
+                                                  <block type="EventPlayer"></block>
+                                                </value>
+                                                <value name="VALUE-1">
+                                                  <block type="SoldierStateVectorItem">
+                                                    <field name="VALUE-0">SoldierStateVector</field>
+                                                    <field name="VALUE-1">GetPosition</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
                                       </block>
                                     </next>
                                   </block>
