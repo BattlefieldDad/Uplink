@@ -1728,7 +1728,7 @@
             <field name="SUBROUTINE_NAME">initialiseMainGameSettings</field>
             <value name="PARAM-0">
               <block type="Number">
-                <field name="NUM">10</field>
+                <field name="NUM">60</field>
               </block>
             </value>
             <value name="PARAM-1">
