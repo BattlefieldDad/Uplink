@@ -30,13 +30,13 @@
   <block type="Text" x="-2889" y="-3301">
     <field name="TEXT">UPLINK MAP LOCATION SETUP</field>
   </block>
-  <block type="Text" x="-4716" y="-3157">
+  <block type="Text" x="-4990" y="-3134">
     <field name="TEXT">SUBS FOR UPLINK LOCATION ARRAY SETTING</field>
   </block>
   <block type="Text" x="-2889" y="-3234">
     <field name="TEXT">TO ADD MAP EXTEND CODE BELOW</field>
   </block>
-  <block type="Text" x="-4269" y="-3160">
+  <block type="Text" x="-4538" y="-3134">
     <field name="TEXT">ADD/REMOVE LOCATIONS BY EDITING SUBS</field>
   </block>
   <block type="Text" x="-2887" y="-3161">
