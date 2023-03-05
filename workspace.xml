@@ -2669,12 +2669,12 @@
                 </value>
                 <value name="PARAM-4">
                   <block type="Number">
-                    <field name="NUM">2</field>
+                    <field name="NUM">15</field>
                   </block>
                 </value>
                 <value name="PARAM-5">
                   <block type="Number">
-                    <field name="NUM">3</field>
+                    <field name="NUM">60</field>
                   </block>
                 </value>
                 <value name="PARAM-6">
