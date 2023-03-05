@@ -2754,16 +2754,12 @@
                                                                                         <statement name="DO">
                                                                                           <block type="subroutineInstanceBlock">
                                                                                             <mutation>
-                                                                                              <parameter types="TeamId">teamID</parameter>
+                                                                                              <parameter types="Number">teamID</parameter>
                                                                                             </mutation>
                                                                                             <field name="SUBROUTINE_NAME">spotAllPlayersOnOpposingSide</field>
                                                                                             <value name="PARAM-0">
-                                                                                              <block type="GetTeamId">
-                                                                                                <value name="VALUE-0">
-                                                                                                  <block type="Number">
-                                                                                                    <field name="NUM">2</field>
-                                                                                                  </block>
-                                                                                                </value>
+                                                                                              <block type="Number">
+                                                                                                <field name="NUM">2</field>
                                                                                               </block>
                                                                                             </value>
                                                                                           </block>
@@ -2771,16 +2767,12 @@
                                                                                         <statement name="ELSE">
                                                                                           <block type="subroutineInstanceBlock">
                                                                                             <mutation>
-                                                                                              <parameter types="TeamId">teamID</parameter>
+                                                                                              <parameter types="Number">teamID</parameter>
                                                                                             </mutation>
                                                                                             <field name="SUBROUTINE_NAME">spotAllPlayersOnOpposingSide</field>
                                                                                             <value name="PARAM-0">
-                                                                                              <block type="GetTeamId">
-                                                                                                <value name="VALUE-0">
-                                                                                                  <block type="Number">
-                                                                                                    <field name="NUM">1</field>
-                                                                                                  </block>
-                                                                                                </value>
+                                                                                              <block type="Number">
+                                                                                                <field name="NUM">1</field>
                                                                                               </block>
                                                                                             </value>
                                                                                           </block>
@@ -4696,7 +4688,7 @@
   </block>
   <block type="subroutineBlock" deletable="false" x="6339" y="-2532">
     <mutation>
-      <parameter types="TeamId">teamID</parameter>
+      <parameter types="Number">teamID</parameter>
     </mutation>
     <field name="SUBROUTINE_NAME">spotAllPlayersOnOpposingSide</field>
     <statement name="ACTIONS">
@@ -4728,7 +4720,7 @@
               <block type="GetTeamId">
                 <value name="VALUE-0">
                   <block type="subroutineArgumentBlock">
-                    <field name="ARGUMENT_INDEX">-1</field>
+                    <field name="ARGUMENT_INDEX">0</field>
                   </block>
                 </value>
               </block>
