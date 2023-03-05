@@ -1714,7 +1714,7 @@
         <field name="NAME">BRANDING</field>
         <field name="EVENTTYPE">OnGameModeStarted</field>
         <statement name="ACTIONS">
-          <block type="ShowNotificationMessage">
+          <block type="DisplayCustomNotificationMessage">
             <value name="VALUE-0">
               <block type="Message">
                 <value name="VALUE-0">
@@ -1722,6 +1722,17 @@
                     <field name="TEXT">WELCOME TO UPLINK BY BATTLEFIELD DAD</field>
                   </block>
                 </value>
+              </block>
+            </value>
+            <value name="VALUE-1">
+              <block type="CustomMessagesItem">
+                <field name="VALUE-0">CustomMessages</field>
+                <field name="VALUE-1">HeaderText</field>
+              </block>
+            </value>
+            <value name="VALUE-2">
+              <block type="Number">
+                <field name="NUM">-1</field>
               </block>
             </value>
           </block>
@@ -4830,7 +4841,7 @@
   <block type="Text" x="12762" y="-2566">
     <field name="TEXT">NEW LARGER BAR</field>
   </block>
-  <block type="subroutineBlock" deletable="false" x="2432" y="-2014">
+  <block type="subroutineBlock" deletable="false" x="2512" y="-2003">
     <field name="SUBROUTINE_NAME">trackUplinkPositionWhileHeld</field>
     <statement name="ACTIONS">
       <block type="subroutineInstanceBlock">
@@ -4880,31 +4891,28 @@
                     </mutation>
                     <field name="SUBROUTINE_NAME">setUplinkIconPosition</field>
                     <value name="PARAM-0">
-                      <block type="GetSoldierState">
+                      <block type="CreateVector">
                         <value name="VALUE-0">
-                          <block type="EventPlayer"></block>
-                        </value>
-                        <value name="VALUE-1">
-                          <block type="SoldierStateVectorItem">
-                            <field name="VALUE-0">SoldierStateVector</field>
-                            <field name="VALUE-1">GetPosition</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="SetVariable">
-                        <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="false"></mutation>
-                            <field name="OBJECTTYPE">Global</field>
-                            <field name="VAR" id="7d%E)(xTZ.%k/SQmy~ho" variabletype="Global">currentUplinkLocation</field>
-                          </block>
-                        </value>
-                        <value name="VALUE-1">
-                          <block type="CreateVector">
+                          <block type="XComponentOf">
                             <value name="VALUE-0">
-                              <block type="XComponentOf">
+                              <block type="GetSoldierState">
+                                <value name="VALUE-0">
+                                  <block type="EventPlayer"></block>
+                                </value>
+                                <value name="VALUE-1">
+                                  <block type="SoldierStateVectorItem">
+                                    <field name="VALUE-0">SoldierStateVector</field>
+                                    <field name="VALUE-1">GetPosition</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="Add">
+                            <value name="VALUE-0">
+                              <block type="YComponentOf">
                                 <value name="VALUE-0">
                                   <block type="GetSoldierState">
                                     <value name="VALUE-0">
@@ -4921,46 +4929,49 @@
                               </block>
                             </value>
                             <value name="VALUE-1">
-                              <block type="Add">
+                              <block type="Number">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE-2">
+                          <block type="ZComponentOf">
+                            <value name="VALUE-0">
+                              <block type="GetSoldierState">
                                 <value name="VALUE-0">
-                                  <block type="YComponentOf">
-                                    <value name="VALUE-0">
-                                      <block type="GetSoldierState">
-                                        <value name="VALUE-0">
-                                          <block type="EventPlayer"></block>
-                                        </value>
-                                        <value name="VALUE-1">
-                                          <block type="SoldierStateVectorItem">
-                                            <field name="VALUE-0">SoldierStateVector</field>
-                                            <field name="VALUE-1">GetPosition</field>
-                                          </block>
-                                        </value>
-                                      </block>
-                                    </value>
-                                  </block>
+                                  <block type="EventPlayer"></block>
                                 </value>
                                 <value name="VALUE-1">
-                                  <block type="Number">
-                                    <field name="NUM">10</field>
+                                  <block type="SoldierStateVectorItem">
+                                    <field name="VALUE-0">SoldierStateVector</field>
+                                    <field name="VALUE-1">GetPosition</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
-                            <value name="VALUE-2">
-                              <block type="ZComponentOf">
-                                <value name="VALUE-0">
-                                  <block type="GetSoldierState">
-                                    <value name="VALUE-0">
-                                      <block type="EventPlayer"></block>
-                                    </value>
-                                    <value name="VALUE-1">
-                                      <block type="SoldierStateVectorItem">
-                                        <field name="VALUE-0">SoldierStateVector</field>
-                                        <field name="VALUE-1">GetPosition</field>
-                                      </block>
-                                    </value>
-                                  </block>
-                                </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="SetVariable">
+                        <value name="VALUE-0">
+                          <block type="variableReferenceBlock">
+                            <mutation isObjectVar="false"></mutation>
+                            <field name="OBJECTTYPE">Global</field>
+                            <field name="VAR" id="7d%E)(xTZ.%k/SQmy~ho" variabletype="Global">currentUplinkLocation</field>
+                          </block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="GetSoldierState">
+                            <value name="VALUE-0">
+                              <block type="EventPlayer"></block>
+                            </value>
+                            <value name="VALUE-1">
+                              <block type="SoldierStateVectorItem">
+                                <field name="VALUE-0">SoldierStateVector</field>
+                                <field name="VALUE-1">GetPosition</field>
                               </block>
                             </value>
                           </block>
