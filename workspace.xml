@@ -4838,10 +4838,7 @@
       </block>
     </statement>
   </block>
-  <block type="Text" x="12762" y="-2566">
-    <field name="TEXT">NEW LARGER BAR</field>
-  </block>
-  <block type="subroutineBlock" deletable="false" x="2512" y="-2003">
+  <block type="subroutineBlock" deletable="false" x="2516" y="-2067">
     <field name="SUBROUTINE_NAME">trackUplinkPositionWhileHeld</field>
     <statement name="ACTIONS">
       <block type="subroutineInstanceBlock">
@@ -4989,12 +4986,36 @@
                     </next>
                   </block>
                 </statement>
+                <next>
+                  <block type="subroutineInstanceBlock">
+                    <mutation>
+                      <parameter types="Vector">iconVectorPosition</parameter>
+                    </mutation>
+                    <field name="SUBROUTINE_NAME">setUplinkIconPosition</field>
+                    <value name="PARAM-0">
+                      <block type="GetSoldierState">
+                        <value name="VALUE-0">
+                          <block type="EventPlayer"></block>
+                        </value>
+                        <value name="VALUE-1">
+                          <block type="SoldierStateVectorItem">
+                            <field name="VALUE-0">SoldierStateVector</field>
+                            <field name="VALUE-1">GetPosition</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
         </next>
       </block>
     </statement>
+  </block>
+  <block type="Text" x="12762" y="-2566">
+    <field name="TEXT">NEW LARGER BAR</field>
   </block>
   <block type="subroutineBlock" deletable="false" x="12757" y="-2492">
     <field name="SUBROUTINE_NAME">initiliaseProgressMessageArray</field>
