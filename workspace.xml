@@ -1938,7 +1938,7 @@
                                                     </value>
                                                     <value name="VALUE-1">
                                                       <block type="Number">
-                                                        <field name="NUM">70</field>
+                                                        <field name="NUM">40</field>
                                                       </block>
                                                     </value>
                                                   </block>
@@ -1967,7 +1967,7 @@
                                                     </value>
                                                     <value name="VALUE-1">
                                                       <block type="Number">
-                                                        <field name="NUM">70</field>
+                                                        <field name="NUM">40</field>
                                                       </block>
                                                     </value>
                                                   </block>
