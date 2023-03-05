@@ -2481,17 +2481,17 @@
                 <field name="SUBROUTINE_NAME">initialiseMainGameSettings</field>
                 <value name="PARAM-0">
                   <block type="Number">
-                    <field name="NUM">60</field>
+                    <field name="NUM">2</field>
                   </block>
                 </value>
                 <value name="PARAM-1">
                   <block type="Number">
-                    <field name="NUM">10</field>
+                    <field name="NUM">2</field>
                   </block>
                 </value>
                 <value name="PARAM-2">
                   <block type="Number">
-                    <field name="NUM">3</field>
+                    <field name="NUM">20</field>
                   </block>
                 </value>
                 <value name="PARAM-3">
@@ -2501,12 +2501,12 @@
                 </value>
                 <value name="PARAM-4">
                   <block type="Number">
-                    <field name="NUM">15</field>
+                    <field name="NUM">2</field>
                   </block>
                 </value>
                 <value name="PARAM-5">
                   <block type="Number">
-                    <field name="NUM">60</field>
+                    <field name="NUM">200</field>
                   </block>
                 </value>
                 <value name="PARAM-6">
@@ -3993,19 +3993,6 @@
   <block type="Text" x="12753" y="-3528">
     <field name="TEXT">PROGRESS BAR TEXT ARRAY</field>
   </block>
-  <block type="SetTargetScore" x="2141" y="-2968">
-    <value name="VALUE-0">
-      <block type="GetVariable">
-        <value name="VALUE-0">
-          <block type="variableReferenceBlock">
-            <mutation isObjectVar="false"></mutation>
-            <field name="OBJECTTYPE">Global</field>
-            <field name="VAR" id="`Q8o~fV9^Y=wtf3U8u_N" variabletype="Global">uplinksRequiredToWin</field>
-          </block>
-        </value>
-      </block>
-    </value>
-  </block>
   <block type="Text" x="12756" y="-3471">
     <field name="TEXT">OLD SMALLER BAR</field>
   </block>
@@ -4362,7 +4349,7 @@
       </block>
     </next>
   </block>
-  <block type="subroutineBlock" deletable="false" x="773" y="-2691">
+  <block type="subroutineBlock" deletable="false" x="1171" y="-2729">
     <mutation>
       <parameter types="Number">connectionPhaseTime</parameter>
       <parameter types="Number">transmissionPhaseTime</parameter>
