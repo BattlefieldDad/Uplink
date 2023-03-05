@@ -24,6 +24,7 @@
     <variable type="Global" id="{@Zkwo(.)2e-Z5RDy=yN">uplinkInactiveRespawnCounter</variable>
     <variable type="Global" id="fpp%3Q4#=Pr$o2GGg%}!">progressMessageTextArray</variable>
     <variable type="Global" id="U{?y`3Z~xs}AaY))!6dU">uplinkSpawnLocationAccepted</variable>
+    <variable type="Global" id="GQp2pfCIiNrs1{joR:*(">spotcounter</variable>
   </variables>
   <block type="modBlock" deletable="false" x="-1288" y="-2928">
     <statement name="RULES">
@@ -7097,6 +7098,71 @@
       </block>
     </next>
   </block>
+  <block type="subroutineBlock" deletable="false" x="-103" y="4630">
+    <mutation>
+      <parameter types="TeamId">teamID</parameter>
+    </mutation>
+    <field name="SUBROUTINE_NAME">spotAllPlayersOnOpposingSide</field>
+    <statement name="ACTIONS">
+      <block type="ForVariable">
+        <value name="VALUE-0">
+          <block type="variableReferenceBlock">
+            <mutation isObjectVar="false"></mutation>
+            <field name="OBJECTTYPE">Global</field>
+            <field name="VAR" id="GQp2pfCIiNrs1{joR:*(" variabletype="Global">spotcounter</field>
+          </block>
+        </value>
+        <value name="VALUE-1">
+          <block type="Number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="VALUE-2">
+          <block type="CountOf">
+            <value name="VALUE-0">
+              <block type="AllPlayers"></block>
+            </value>
+          </block>
+        </value>
+        <value name="VALUE-3">
+          <block type="Number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="If">
+            <value name="VALUE-0">
+              <block type="Equals">
+                <value name="VALUE-0">
+                  <block type="GetTeamId">
+                    <value name="VALUE-0">
+                      <block type="ValueInArray">
+                        <value name="VALUE-0">
+                          <block type="AllPlayers"></block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="VALUE-1">
+                  <block type="GetTeamId">
+                    <value name="VALUE-0">
+                      <block type="subroutineArgumentBlock">
+                        <field name="ARGUMENT_INDEX">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="SpotTarget"></block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
   <block type="subroutineBlock" deletable="false" x="-1134" y="4801">
     <field name="SUBROUTINE_NAME">trackUplinkPositionWhileHeld</field>
     <statement name="ACTIONS">
@@ -7201,7 +7267,6 @@
       </block>
     </statement>
   </block>
-  <block type="SpotTarget" x="587" y="4717"></block>
   <block type="subroutineBlock" deletable="false" x="5350" y="4486">
     <field name="SUBROUTINE_NAME">updateProgressMessageTextFromArray</field>
     <statement name="ACTIONS">
@@ -7735,13 +7800,6 @@
       </block>
     </statement>
   </block>
-  <block type="subroutineBlock" deletable="false" x="454" y="4828">
-    <mutation>
-      <parameter types="TeamId">teamID</parameter>
-    </mutation>
-    <field name="SUBROUTINE_NAME">spotAllPlayersOnOpposingSide</field>
-  </block>
-  <block type="ForVariable" x="541" y="5089"></block>
   <block type="subroutineBlock" deletable="false" x="-1129" y="5393">
     <field name="SUBROUTINE_NAME">connectionComplete</field>
     <statement name="ACTIONS">
