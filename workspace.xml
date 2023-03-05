@@ -8118,78 +8118,73 @@
           <block type="subroutineInstanceBlock">
             <field name="SUBROUTINE_NAME">chooseNewUplinkSpawnLocation</field>
             <next>
-              <block type="ShowHighlightedGameModeMessage">
+              <block type="ForVariable">
                 <value name="VALUE-0">
-                  <block type="Message">
-                    <value name="VALUE-0">
-                      <block type="Text">
-                        <field name="TEXT">FOUND</field>
-                      </block>
-                    </value>
-                    <value name="VALUE-1">
-                      <block type="GetVariable">
-                        <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="false"></mutation>
-                            <field name="OBJECTTYPE">Global</field>
-                            <field name="VAR" id="N=[(J,6x},5BRF_L!qy9" variabletype="Global">uplinkSpawnCounter</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
+                  <block type="variableReferenceBlock">
+                    <mutation isObjectVar="false"></mutation>
+                    <field name="OBJECTTYPE">Global</field>
+                    <field name="VAR" id="N=[(J,6x},5BRF_L!qy9" variabletype="Global">uplinkSpawnCounter</field>
                   </block>
                 </value>
-                <next>
-                  <block type="ForVariable">
+                <value name="VALUE-1">
+                  <block type="GetVariable">
                     <value name="VALUE-0">
                       <block type="variableReferenceBlock">
                         <mutation isObjectVar="false"></mutation>
                         <field name="OBJECTTYPE">Global</field>
-                        <field name="VAR" id="N=[(J,6x},5BRF_L!qy9" variabletype="Global">uplinkSpawnCounter</field>
+                        <field name="VAR" id="9Q]{dH0]g7!;.c]wcyE2" variabletype="Global">uplinkRespawnTime</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="VALUE-2">
+                  <block type="Number">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="VALUE-3">
+                  <block type="Number">
+                    <field name="NUM">-1</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="Wait">
+                    <value name="VALUE-0">
+                      <block type="Number">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="SetVariable">
+                    <value name="VALUE-0">
+                      <block type="variableReferenceBlock">
+                        <mutation isObjectVar="false"></mutation>
+                        <field name="OBJECTTYPE">Global</field>
+                        <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
                       </block>
                     </value>
                     <value name="VALUE-1">
-                      <block type="GetVariable">
-                        <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="false"></mutation>
-                            <field name="OBJECTTYPE">Global</field>
-                            <field name="VAR" id="9Q]{dH0]g7!;.c]wcyE2" variabletype="Global">uplinkRespawnTime</field>
-                          </block>
-                        </value>
+                      <block type="Text">
+                        <field name="TEXT">ACTIVE</field>
                       </block>
                     </value>
-                    <value name="VALUE-2">
-                      <block type="Number">
-                        <field name="NUM">0</field>
-                      </block>
-                    </value>
-                    <value name="VALUE-3">
-                      <block type="Number">
-                        <field name="NUM">-1</field>
-                      </block>
-                    </value>
-                    <statement name="DO">
-                      <block type="Wait">
-                        <value name="VALUE-0">
-                          <block type="Number">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                      </block>
-                    </statement>
                     <next>
-                      <block type="SetVariable">
+                      <block type="TriggerAudio">
                         <value name="VALUE-0">
-                          <block type="variableReferenceBlock">
-                            <mutation isObjectVar="false"></mutation>
-                            <field name="OBJECTTYPE">Global</field>
-                            <field name="VAR" id="YA6o9W:_vpQ7kIYg6*^e" variabletype="Global">uplinkDeviceState</field>
+                          <block type="SoundsItem">
+                            <field name="VALUE-0">Sounds</field>
+                            <field name="VALUE-1">ObjectiveUpdated</field>
                           </block>
                         </value>
                         <value name="VALUE-1">
-                          <block type="Text">
-                            <field name="TEXT">ACTIVE</field>
+                          <block type="GetTeamId">
+                            <value name="VALUE-0">
+                              <block type="Number">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
                           </block>
                         </value>
                         <next>
@@ -8204,30 +8199,11 @@
                               <block type="GetTeamId">
                                 <value name="VALUE-0">
                                   <block type="Number">
-                                    <field name="NUM">1</field>
+                                    <field name="NUM">2</field>
                                   </block>
                                 </value>
                               </block>
                             </value>
-                            <next>
-                              <block type="TriggerAudio">
-                                <value name="VALUE-0">
-                                  <block type="SoundsItem">
-                                    <field name="VALUE-0">Sounds</field>
-                                    <field name="VALUE-1">ObjectiveUpdated</field>
-                                  </block>
-                                </value>
-                                <value name="VALUE-1">
-                                  <block type="GetTeamId">
-                                    <value name="VALUE-0">
-                                      <block type="Number">
-                                        <field name="NUM">2</field>
-                                      </block>
-                                    </value>
-                                  </block>
-                                </value>
-                              </block>
-                            </next>
                           </block>
                         </next>
                       </block>
