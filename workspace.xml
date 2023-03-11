@@ -11543,7 +11543,7 @@
                 <value name="VALUE-0">
                   <block type="MapsItem">
                     <field name="VALUE-0">Maps</field>
-                    <field name="VALUE-1">Frost</field>
+                    <field name="VALUE-1">TheWall</field>
                   </block>
                 </value>
               </block>
